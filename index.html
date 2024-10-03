@@ -1,0 +1,1580 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>UNIT-1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1121ff79-b8cd-8030-b52d-e2251879921c" class="page sans"><header><h1 class="page-title">UNIT-1</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Owner</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/ACg8ocLhGm7tcmQlH2TiNbEIzYolhQ18MhUPJcDo3b0xznisKjLGKw=s100" class="icon user-icon"/>Puppala Sagar </span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td></td></tr></tbody></table></header><div class="page-body"><p id="1121ff79-b8cd-80d8-ad14-e48223aa5b4d" class="">
+</p><h3 id="1121ff79-b8cd-80fc-b544-d92b555f7280" class=""><strong>DAA Program Notes</strong></h3><h1 id="1121ff79-b8cd-800a-af02-e71db6dafc88" class=""><strong>UNIT I - Recursion, Divide &amp; Conquer</strong></h1><h1 id="1121ff79-b8cd-8053-89ba-f5de5b46a407" class=""><strong>First and last occurrence of an element</strong></h1><p id="1121ff79-b8cd-808f-b71e-d677f46a0d1d" class="">You are part of a team developing a climate monitoring system that records temperature readings</p><p id="1121ff79-b8cd-802b-b63d-fa73a9763c42" class="">from various sensors placed across different regions.</p><p id="1121ff79-b8cd-8026-b6a3-e3bac9eededf" class="">The temperature data is recorded every hour and stored in a sorted list,</p><p id="1121ff79-b8cd-802f-852f-ff42cf845571" class="">where each entry represents the temperature at a specific time.</p><p id="1121ff79-b8cd-8040-9060-c5798a82b801" class="">The system occasionally needs to analyze periods of extreme weather,</p><p id="1121ff79-b8cd-80e5-bc47-cc88492008c9" class="">such as heatwaves or cold spells.</p><p id="1121ff79-b8cd-80fb-98b3-f03c626a6914" class="">To do this, it must identify the first and last occurrences of a specific temperature</p><p id="1121ff79-b8cd-80b2-b104-f172cd8ce027" class="">within the recorded data, which helps in understanding the duration of these extreme conditions.</p><p id="1121ff79-b8cd-801d-90dc-dcda39963e28" class="">Your task is to implement a module</p><p id="1121ff79-b8cd-8081-a8f2-e59317215ec6" class="">that finds the first and last positions of a given temperature in the sorted list of temperature readings.</p><p id="1121ff79-b8cd-80ba-8f84-fba3d76c14a4" class="">NOTE:</p><p id="1121ff79-b8cd-80e1-a0e5-e3efd297212a" class="">If the target temperature is not found in the list, the function should return [-1, -1].</p><p id="1121ff79-b8cd-806d-b481-ea9a6089def5" class="">The solution should be efficient, as the temperature data could be extensive.</p><h2 id="1121ff79-b8cd-80ac-b1cc-e6e3d6b55639" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80c8-ac6f-fbd31c18cbe2" class="">Line-1 : Comma(,) separated list of numbers, represents temperature</p><p id="1121ff79-b8cd-80b2-b8dc-efcab56b3d91" class="">Line-2 : A number, target value</p><h2 id="1121ff79-b8cd-8007-af49-e1436d8b63fe" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8059-b27d-d850345c4ece" class="">Line-1 : Comma(,) separated numbers, represents indexes, check sample output</p><h2 id="1121ff79-b8cd-8068-9544-dbb0ac34bc70" class=""><strong>Sample input1:</strong></h2><p id="1121ff79-b8cd-80d9-b112-de4d391efc17" class="">15, 18, 18, 21, 21, 21, 24, 30</p><p id="1121ff79-b8cd-808a-80e6-f0bb2d0b6ee1" class="">21</p><h2 id="1121ff79-b8cd-80d1-9753-c3db7451feb3" class=""><strong>Sample output1:</strong></h2><p id="1121ff79-b8cd-8080-b3c4-d3935a8b35af" class="">[3, 5]</p><h2 id="1121ff79-b8cd-80ba-9547-d947b6a37bc1" class=""><strong>Sample input2:</strong></h2><p id="1121ff79-b8cd-80fb-a4a0-c07ce6961868" class="">10, 20, 30, 40, 50, 60, 70, 80</p><p id="1121ff79-b8cd-80b1-86da-dd4795a6a4a7" class="">60</p><h2 id="1121ff79-b8cd-80af-90c4-c0676fa3bb65" class=""><strong>Sample output2:</strong></h2><p id="1121ff79-b8cd-8048-9cdf-c8d8b8026fe4" class="">[5, 5]</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80e9-9b80-fa0d81bd6f15" class="code"><code class="language-Bash">import java.util.*;
+
+public class Solution{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        String x = sc.nextLine();
+        int target = sc.nextInt();
+        String arr[] = x.split(&quot;,&quot;);
+        
+        ArrayList&lt;Integer&gt; a = new ArrayList&lt;&gt;();
+        for(int i=0;i&lt;arr.length;i++){
+            
+             a.add(Integer.parseInt(arr[i].strip()));
+        }
+        
+    
+        int start=-1;
+        int end=-1;
+        
+        for(int i=0;i&lt;a.size();i++){
+            if(a.get(i)==target &amp;&amp; start==-1)
+            {
+                start=i;
+                end=i;
+            }
+            if (a.get(i)==target){
+                end=i;
+            }
+        }
+        
+        System.out.println(&quot;[&quot;+start+&quot;,&quot;+end+&quot;]&quot;);
+        
+    }
+}</code></pre><h1 id="1121ff79-b8cd-8081-9ab0-c6b87bec6fb9" class=""><strong>Number of possible decoding</strong></h1><p id="1121ff79-b8cd-8090-b97a-feaba4645f71" class="">You are part of a team working on a sophisticated communication system for an international spy network.</p><p id="1121ff79-b8cd-8099-b0a1-cc0f4dac1e05" class="">The network uses encoded messages to ensure secure communication between agents.</p><p id="1121ff79-b8cd-806f-9415-c68c785c9268" class="">Each message is encoded as a string of digits, and each digit or</p><p id="1121ff79-b8cd-8095-b2f7-cd6b40678b64" class="">combination of digits corresponds to a specific letter in the alphabet.</p><p id="1121ff79-b8cd-80b8-9f3d-e9de2d9e68d3" class="">The encoding scheme is as follows:</p><p id="1121ff79-b8cd-8009-ad07-d6f607c09f48" class="">&#x27;1&#x27; corresponds to &#x27;A&#x27;,</p><p id="1121ff79-b8cd-80eb-ae3e-fa9e1b566144" class="">&#x27;2&#x27; corresponds to &#x27;B&#x27;,</p><p id="1121ff79-b8cd-807d-839a-dd0757f937e7" class="">...,</p><p id="1121ff79-b8cd-807c-be7a-f917532d7933" class="">&#x27;26&#x27; corresponds to &#x27;Z&#x27;.</p><p id="1121ff79-b8cd-8044-ae94-e16d750f2346" class="">A single digit can represent a letter, or a pair of digits can represent a letter</p><p id="1121ff79-b8cd-807f-9200-c9dbaed4508e" class="">if the pair forms a valid number between 10 and 26.</p><p id="1121ff79-b8cd-804b-aff8-d0a083850725" class="">However, decoding these messages is tricky because there may be multiple valid ways</p><p id="1121ff79-b8cd-80bc-bae1-fad29d8437e5" class="">to interpret the sequence of digits.</p><p id="1121ff79-b8cd-80d9-ab7f-ddea19347318" class="">Your task is to determine the number of possible ways to decode a given encoded message.</p><p id="1121ff79-b8cd-8036-baf7-ca0c82a4f486" class="">NOTE:</p><p id="1121ff79-b8cd-80fa-b217-c0ed52346143" class="">The encoded message will not contain any characters other than digits,</p><p id="1121ff79-b8cd-8044-a10b-f13cb2be50cd" class="">and no digit will be &#x27;0&#x27; unless it is part of a valid two-digit number (like &#x27;10&#x27; or &#x27;20&#x27;).</p><h2 id="1121ff79-b8cd-80a8-8616-dd22f8ec8252" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-808d-923f-f4554556faa4" class="">Line1: A string of digits</p><h2 id="1121ff79-b8cd-8039-946e-c05ebc9215e5" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8039-b4cb-c2c2a936887e" class="">Line1: A number, total number of distinct ways to decode the message.</p><h2 id="1121ff79-b8cd-804b-a091-d608a367f18f" class=""><strong>Sample Input1:</strong></h2><p id="1121ff79-b8cd-8096-942e-e88c8c69089e" class="">226</p><h2 id="1121ff79-b8cd-80c0-95a9-ddca494ce4eb" class=""><strong>Sample Output1:</strong></h2><p id="1121ff79-b8cd-80c6-b362-d204cbeadfb0" class="">3</p><h2 id="1121ff79-b8cd-8060-83b7-c3b82af94d42" class=""><strong>Explanation:</strong></h2><p id="1121ff79-b8cd-80f7-8920-cd4c6644df8a" class="">The encoded message &quot;226&quot; can be decoded in the following ways:</p><p id="1121ff79-b8cd-8062-9cee-e9a846420f2c" class="">&quot;BZ&quot; (where &quot;2&quot; = &quot;B&quot; and &quot;26&quot; = &quot;Z&quot;)</p><p id="1121ff79-b8cd-802c-b513-c5b2859519d9" class="">&quot;VF&quot; (where &quot;22&quot; = &quot;V&quot; and &quot;6&quot; = &quot;F&quot;)</p><p id="1121ff79-b8cd-80a2-a916-c94ebeb31233" class="">&quot;BBF&quot; (where &quot;2&quot; = &quot;B&quot;, &quot;2&quot; = &quot;B&quot;, and &quot;6&quot; = &quot;F&quot;)</p><h2 id="1121ff79-b8cd-8068-bbcb-f1aca06c4f9d" class=""><strong>Sample Input2:</strong></h2><p id="1121ff79-b8cd-802e-9a94-f6b35c8fcc5b" class="">06</p><h2 id="1121ff79-b8cd-808b-bc0a-c09e59e5162a" class=""><strong>Sample Output2:</strong></h2><p id="1121ff79-b8cd-8077-9d7e-d6626d538d6e" class="">0</p><p id="1121ff79-b8cd-80db-8b7e-c3e5ca6a0853" class="">Explanation: No valid decodings</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8029-a262-e5f9b1ff56de" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution {
+
+    static int numDecodings(String s) {
+        if (s == null || s.length() == 0 || s.charAt(0) == &#x27;0&#x27;) {
+            return 0; 
+        }
+
+        int n = s.length();
+        int[] dp = new int[n + 1];  
+        dp[0] = 1; 
+        dp[1] = 1; 
+        for (int i = 2; i &lt;= n; i++) {
+            int singleDigit = Integer.parseInt(s.substring(i - 1, i));
+            if (singleDigit &gt;= 1 &amp;&amp; singleDigit &lt;= 9) {
+                dp[i] += dp[i - 1];
+            }
+
+            int twoDigit = Integer.parseInt(s.substring(i - 2, i));
+            if (twoDigit &gt;= 10 &amp;&amp; twoDigit &lt;= 26) {
+                dp[i] += dp[i - 2];
+            }
+        }
+
+        return dp[n];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(numDecodings(s));
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-80ad-9e91-e3408a19a9da" class=""><strong>Rotate Array</strong></h1><p id="1121ff79-b8cd-807b-b1e3-fd447df2691b" class="">Given an array of integers and a non-negative integer k,</p><p id="1121ff79-b8cd-8016-9bba-ddcf4dfd5e1a" class="">your task is to rotate the array to the right by k positions.</p><p id="1121ff79-b8cd-802b-97ab-d3d7fe0112f6" class="">Rotation means that elements at the end of the array move to the beginning,</p><p id="1121ff79-b8cd-80ab-8425-ecbd8663aa54" class="">and the rest of the elements shift to the right.</p><h2 id="1121ff79-b8cd-8003-bd51-d872fae408fa" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-805f-9a82-cd3559476074" class="">Line-1: An integer n, represents size of array</p><p id="1121ff79-b8cd-802f-b039-f5d5d46719d8" class="">Line-2 to n: An integer array arr of length n.</p><p id="1121ff79-b8cd-8065-bf20-f8b1511b449c" class="">Line-n+1: A non-negative integer k, representing the number of positions to rotate the array.</p><h2 id="1121ff79-b8cd-8033-a6a5-c9259a318c76" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8028-8cba-d91ef80ff284" class="">Line-1: Return the array after being rotated by k positions.</p><h2 id="1121ff79-b8cd-8061-ba07-d756778a1061" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8014-92dc-ee5fda2933ff" class="">The rotation should be performed in place with O(1) extra space.</p><p id="1121ff79-b8cd-808f-baa5-de0a6e23f748" class="">The time complexity should be O(n).</p><h2 id="1121ff79-b8cd-8089-af2b-c585938941c8" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80b2-a6d9-dbc73fcf10ab" class="">5</p><p id="1121ff79-b8cd-80cf-b80d-ed9c7dee9037" class="">1 2 3 4 5</p><p id="1121ff79-b8cd-80b8-bc30-f457c5f315fd" class="">2</p><h2 id="1121ff79-b8cd-8008-8e88-d6f881ca9217" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8035-ba1e-da55a6d53052" class="">4 5 1 2 3</p><h2 id="1121ff79-b8cd-809f-92fd-eb1d84413969" class=""><strong>Sample Input2:</strong></h2><p id="1121ff79-b8cd-801c-a9f9-c74d785046b2" class="">5</p><p id="1121ff79-b8cd-8086-a842-fcaa1b98e2cf" class="">1 2 3 4 5</p><p id="1121ff79-b8cd-8067-9d01-e510c6ab8e7f" class="">5</p><h2 id="1121ff79-b8cd-8047-b9fa-cb04d4be7507" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-8025-ba8f-c62b3539fded" class="">1 2 3 4 5</p><h2 id="1121ff79-b8cd-804e-92be-da72a088ec35" class=""><strong>Sample Input-3:</strong></h2><p id="1121ff79-b8cd-805d-b394-dc7856430c8e" class="">5</p><p id="1121ff79-b8cd-8096-ad7f-caf7be2d7458" class="">1 2 3 4 5</p><p id="1121ff79-b8cd-80a9-96f8-eb87c28db02c" class="">7</p><h2 id="1121ff79-b8cd-80f6-b214-fc2387d3369f" class=""><strong>Sample Output-3:</strong></h2><p id="1121ff79-b8cd-803e-aafd-e95c414859f0" class="">4 5 1 2 3</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8066-91dc-c5406b7e1110" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    static void reverse(int[] arr,int i,int n){
+        while(i&lt;=n){
+            int temp=arr[i];
+            arr[i]=arr[n];
+            arr[n]=temp;
+            i++;
+            n--;
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        int p=sc.nextInt();
+        p=p%n;
+        
+        reverse(arr,0,n-1);
+        reverse(arr,0,p-1);
+        reverse(arr,p,n-1);
+        
+        for(int i=0;i&lt;n;i++){
+            System.out.print(arr[i]+&quot; &quot;);
+        }
+    }
+}</code></pre><h1 id="1121ff79-b8cd-8042-8163-fedd37253661" class=""><strong>Missing Number</strong></h1><p id="1121ff79-b8cd-80a7-ab6d-d01553b79b2f" class="">Given an array arr containing n distinct numbers taken from the range 1 to n+1 (inclusive), where one number is missing.</p><p id="1121ff79-b8cd-802d-9d8f-dba15697d189" class="">Your task is to find the missing number.</p><p id="1121ff79-b8cd-8084-9e1a-c3ad5f0cd711" class="">The array contains exactly n numbers from the range 1 to n+1, with one number missing.</p><h2 id="1121ff79-b8cd-803e-839b-e728fb7a0006" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8089-b20a-f6118ec3bdf0" class="">Line-1: An integer n, represents size of array</p><p id="1121ff79-b8cd-80f2-9e9f-e22537ce639d" class="">Line-2 to n: An integer array of length n, where the elements are distinct and within the range 1 to n+1.</p><h2 id="1121ff79-b8cd-8004-ba39-e835cb1f07b2" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8055-92c5-f970230a3b8d" class="">Line-1: An integer, the missing number.</p><h2 id="1121ff79-b8cd-80a4-ba51-e7a18e94d6e3" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80d1-b244-fc878beae40b" class="">The solution must run in O(n) time.</p><p id="1121ff79-b8cd-8014-83a0-c25a3f1c5a3a" class="">The solution must use O(1) extra space.</p><p id="1121ff79-b8cd-8050-9ec0-f48bd5cb67ff" class="">The missing number will always be within the range [1, n+1].</p><h2 id="1121ff79-b8cd-8031-bdaa-f3c953b99419" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-8027-b4de-f6b6be32fa42" class="">7</p><p id="1121ff79-b8cd-801c-ba12-c90b7eb9d9ec" class="">8 1 4 3 5 7 6</p><h2 id="1121ff79-b8cd-80ff-acb2-c37e0f3675da" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8020-9fb1-fa0e3224f945" class="">2</p><h2 id="1121ff79-b8cd-8000-b576-f20c5b5676e2" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8005-a2f2-d38e6100040b" class="">4</p><p id="1121ff79-b8cd-80fc-9c05-c88596a3e56c" class="">2 3 4 5</p><h2 id="1121ff79-b8cd-80dd-ab40-d4a04e555b71" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80ee-9df9-d9b6209d7e2e" class="">1</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8089-8329-ec197c3f0979" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n;
+        n=sc.nextInt();
+        int[] arr=new int[n];
+        int sum=0;
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+            sum+=arr[i];
+        }
+        
+        System.out.println(((n+2)*(n+1))/2 - sum);
+        
+        
+    }
+}</code></pre><h1 id="1121ff79-b8cd-802c-b984-e532b37c79ad" class=""><strong>Remove Duplicates</strong></h1><p id="1121ff79-b8cd-801c-95d4-f204f0592fc8" class="">Given a sorted array of integers, modify the array in place to remove the duplicates such that each element appears only once.</p><p id="1121ff79-b8cd-80ac-bbd7-ca9acc95678e" class="">You task is to return the new length of the array after duplicates are removed.</p><p id="1121ff79-b8cd-8054-93af-e531e1c17311" class="">You must do this with O(1) extra space (i.e., modify the array in place) and O(n) time complexity.</p><h2 id="1121ff79-b8cd-804d-b48e-de54fe10d3c9" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80fc-9f8d-e65ba60873f3" class="">Line-1: An integer n, represents size of array.</p><p id="1121ff79-b8cd-8016-a5a2-fac682b5acea" class="">Line-2 to n: A sorted integer array arr of length n.</p><h2 id="1121ff79-b8cd-80f3-b0e4-dffb184416a2" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-802c-aa30-c837a4a058dc" class="">Line-1: An integer, the new length of the array after removing the duplicates.</p><h2 id="1121ff79-b8cd-80b7-a612-fe11e697b089" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80e3-94c4-ce66355cf9c1" class="">You must modify the input array in place with O(1) extra memory.</p><p id="1121ff79-b8cd-8025-ba76-e98e08a6adf3" class="">The relative order of the elements should be preserved.</p><p id="1121ff79-b8cd-802d-97e9-e26c71e5b511" class="">The function should run in O(n) time complexity.</p><h2 id="1121ff79-b8cd-804b-9dca-ccb984e38c2c" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80bf-9554-d4afc57514c5" class="">3</p><p id="1121ff79-b8cd-80aa-8c47-e622c15019a9" class="">1 1 2</p><h2 id="1121ff79-b8cd-802f-b750-c2a29608a143" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-804b-b26c-ea9168ac3b4e" class="">2</p><p id="1121ff79-b8cd-8098-a988-fdcf18eedc66" class="">Explanation: The new length is 2, and the array becomes [1, 2].</p><h2 id="1121ff79-b8cd-801c-86b8-e3be344089e7" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8032-bcf5-d9215b149856" class="">10</p><p id="1121ff79-b8cd-8020-9121-e9dd2c8caa91" class="">0 0 1 1 1 2 2 3 3 4</p><h2 id="1121ff79-b8cd-80a5-94e4-f87caf151897" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-8042-9f0c-fd839cea5989" class="">5</p><p id="1121ff79-b8cd-80e2-a6c4-c4da0e90136e" class="">Explanation: The new length is 5, and the array becomes [0, 1, 2, 3, 4].</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80d8-8547-f2e3bd4c6a5d" class="code"><code class="language-Java" style="white-space:pre-wrap;word-break:break-all">import java.util.*;
+class Solution{
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr= new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int c=1;
+        for(int i=0;i&lt;n-1;i++){
+            if(arr[i]!=arr[i+1]) c++;
+        }
+        System.out.println(c);
+        
+    }
+}</code></pre><h1 id="1121ff79-b8cd-808a-828d-f455a2e2ab0a" class=""><strong>Move Zeros to the End</strong></h1><p id="1121ff79-b8cd-800d-a68e-f6863a44e625" class="">Given an integer array nums, move all 0&#x27;s to the end of it while maintaining the relative order of the non-zero elements.</p><p id="1121ff79-b8cd-8076-820f-fe5e4b209630" class="">The operation should be performed in-place without making a copy of the array, and the time complexity should be minimized.</p><h2 id="1121ff79-b8cd-80ab-9c15-d12d12c71be8" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80d0-9119-c25bd79ee143" class="">nums contains only integers.</p><p id="1121ff79-b8cd-808d-a3c4-d418ff8eee9b" class="">You must maintain the relative order of the non-zero elements.</p><p id="1121ff79-b8cd-80f3-9c13-d62521b8c80a" class="">The operation must be done in-place with O(1) extra space.</p><h2 id="1121ff79-b8cd-80ed-a198-c91ce3d76b49" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-806e-997c-fc57dad07a5e" class="">Line-1: An integer, size of the array</p><p id="1121ff79-b8cd-80b5-80af-e70947d921ed" class="">Line-2 to n: A single array of integers nums with at least one element.</p><h2 id="1121ff79-b8cd-80a6-b740-c912c8483bf3" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80fe-af16-f5123430296b" class="">Line-1: The modified input array nums, where all zeros are moved to the end while maintaining the relative order of the non-zero elements.</p><h2 id="1121ff79-b8cd-80d0-8d28-f5179875b661" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80b1-83f6-ed359874d267" class="">5</p><p id="1121ff79-b8cd-8002-8d46-e9b79f3c1e88" class="">0 1 0 3 12</p><h2 id="1121ff79-b8cd-8053-a924-c4165b866476" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80e8-b4fb-c0b74ee2341e" class="">1 3 12 0 0</p><h2 id="1121ff79-b8cd-80de-8260-dfecc41e5830" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8001-92b9-e36f664ca6b8" class="">1</p><p id="1121ff79-b8cd-803e-8124-cff64cdd2957" class="">0</p><h2 id="1121ff79-b8cd-807a-ace9-e6f304b2fe1e" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80df-812f-cb815b6befc7" class="">0</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-808c-a989-fb76ea87404e" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static void moveZeros(int[] arr,int n){
+        int z=0;
+        for (int nz = 0; nz &lt; n; nz++) {
+            if (arr[nz] != 0) {
+                int temp = arr[nz];
+                arr[nz] = arr[z];
+                arr[z] = temp;
+                z++;
+            }
+        }
+        
+    }
+    
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i&lt;n;i++) arr[i]=sc.nextInt();
+        
+        moveZeros(arr,n);
+        
+        for(int i=0;i&lt;n;i++){
+            System.out.print(arr[i]+&quot; &quot;);
+        }
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-805f-9e34-d2d11d05e4c0" class=""><strong>Factorial (Recursion)</strong></h1><p id="1121ff79-b8cd-8084-8fdc-f19b2c943c82" class="">Day4_Program1</p><p id="1121ff79-b8cd-805a-84a3-d21ff6eb36a7" class="">Given a non-negative integer n, compute the factorial of n.</p><p id="1121ff79-b8cd-806d-a41e-d010a4e627de" class="">The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.</p><p id="1121ff79-b8cd-801d-8ae6-c82539c1b955" class="">The factorial of 0 is defined as 1.</p><p id="1121ff79-b8cd-8025-8f2d-f73670a1f534" class="">The formula for the factorial of n is:</p><p id="1121ff79-b8cd-80fc-b453-e787ce70b8b6" class="">n! = n × (n-1) × (n-2) × ... × 1</p><h2 id="1121ff79-b8cd-8029-836d-c43f8cc29c23" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8060-9f79-d6b2a093399e" class="">0 ≤ n ≤ 10⁵ (Handle large inputs efficiently).</p><p id="1121ff79-b8cd-801b-be78-c67f1d9650be" class="">Ensure that your solution can handle large values of n without exceeding time limits or running into integer overflow.</p><h2 id="1121ff79-b8cd-802c-844f-cffd90691fec" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8081-8797-e6135e7a359b" class="">Line-1: A single integer n, representing the number whose factorial needs to be computed.</p><h2 id="1121ff79-b8cd-804c-ae85-ca1e0ecff1d7" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80a2-80fc-ef4252ef8844" class="">Line-1: A single integer, representing the factorial of n.</p><h2 id="1121ff79-b8cd-801b-8524-caf3409d8a34" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80b0-861a-d3a1c630e092" class="">5</p><h2 id="1121ff79-b8cd-8083-8600-f46c13ce668a" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80c9-b740-c583095a852e" class="">120</p><h2 id="1121ff79-b8cd-802e-ae2d-c6602ace14f7" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80f4-b513-d93e8671e6aa" class="">0</p><h2 id="1121ff79-b8cd-80f9-8062-d2255b3819a6" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80db-8403-f77c99e582db" class="">1</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80bf-a8c9-de204b34a3d6" class="code"><code class="language-Bash">import java.util.*;
+import java.math.*;
+
+class Solution{
+    static BigInteger fact(BigInteger n)
+    {
+        if(n.equals(BigInteger.ZERO))
+        {
+            return BigInteger.ONE;
+        }
+        if(n.equals(BigInteger.ONE))
+        {
+            return BigInteger.ONE;
+            
+        }
+        return n.multiply(fact(n.subtract(BigInteger.ONE)));
+    }
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        BigInteger n=sc.nextBigInteger();
+        System.out.println(fact(n));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-806d-8b16-f0d38c807494" class=""><strong>Fibonacci (Recursion)</strong></h1><p id="1121ff79-b8cd-80cd-b143-fc3329e2436e" class="">Given a non-negative integer n, generate the Fibonacci series up to the nth number using a recursive approach.</p><p id="1121ff79-b8cd-8070-a851-f47da7055879" class="">The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1.</p><p id="1121ff79-b8cd-808d-9138-d99494885ecc" class="">The Fibonacci sequence is defined as:</p><p id="1121ff79-b8cd-8068-98c7-f29dd9e6634b" class="">F(0) = 0</p><p id="1121ff79-b8cd-800e-b749-f7c6da820b38" class="">F(1) = 1</p><p id="1121ff79-b8cd-804b-9a7a-ca5d0f5f7099" class="">F(n) = F(n-1) + F(n-2) for n ≥ 2</p><h2 id="1121ff79-b8cd-8032-bfa8-d24880d8a9cb" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8020-aaea-de5b0955c53f" class="">You are required to compute the Fibonacci series recursively as demonstrated in the Sample input and output.</p><p id="1121ff79-b8cd-80ca-85a1-c1ec48fa2a31" class="">The recursive approach may cause time complexity issues for large values of n due to overlapping subproblems.</p><p id="1121ff79-b8cd-80cf-ba95-ed968a9679f9" class="">0 ≤ n ≤ 30 is a reasonable upper bound for testing the recursive approach due to its exponential time complexity.</p><h2 id="1121ff79-b8cd-8016-a157-c9b72a98a1bb" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-802a-b456-dfa7ba17692b" class="">Line-1: A single integer n, representing the number of Fibonacci numbers to generate.</p><h2 id="1121ff79-b8cd-808d-b222-c7c951a5b7d8" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-806e-8048-dddd666831df" class="">Line-1: A sequence of n Fibonacci numbers.</p><h2 id="1121ff79-b8cd-80c5-9d20-de7be1dc75a2" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80c7-8272-efeb79acf98d" class="">5</p><h2 id="1121ff79-b8cd-80b1-b667-e5517ded5e3e" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8025-b3e4-dcab58ef4938" class="">0 1 1 2 3</p><h2 id="1121ff79-b8cd-8083-a6d7-c6fe407913e3" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-808e-b019-e690c74aca81" class="">10</p><h2 id="1121ff79-b8cd-800b-b0b4-fe5427423612" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-8059-b104-eeb38302c582" class="">0 1 1 2 3 5 8 13 21 34</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8005-9956-d3d540a7cd7a" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static int fib(int n)
+    {
+        if(n==0) return 0;
+        if(n==1) return 1;
+        
+        return fib(n-1) + fib(n-2);
+        
+    }
+    
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        // fib(n);
+        
+        for(int i = 0; i &lt;= n; i++) {
+            System.out.print(fib(i) + &quot; &quot;);
+        }
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-80c9-958a-f7445f55ba52" class=""><strong>Climbing Stairs</strong></h1><p id="1121ff79-b8cd-80b3-9f2c-f6f9c3815f75" class="">You are climbing a staircase. It takes n steps to reach the top.</p><p id="1121ff79-b8cd-80fd-9a05-e2513136bcee" class="">Each time you can either climb 1 or 2 steps.</p><p id="1121ff79-b8cd-80c5-8b43-cb7ccf8c8ed7" class="">In how many distinct ways can you climb to the top?</p><h2 id="1121ff79-b8cd-8036-b572-c073792667be" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8017-af2e-c349d9c4c213" class="">1 ≤ n ≤ 45</p><p id="1121ff79-b8cd-8076-975b-e1d1e763363e" class="">Each time you can take either 1 step or 2 steps.</p><p id="1121ff79-b8cd-803d-8d78-d221925bd842" class="">You need to compute the total number of distinct ways to climb the staircase.</p><h2 id="1121ff79-b8cd-8006-b94f-dbafe317d35e" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8030-bf1f-f3f6326195de" class="">Line-1: A single integer n, representing the number of steps required to reach the top.</p><h2 id="1121ff79-b8cd-804d-8b3a-f150cdc4fcb1" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-807f-88cb-fd7844393529" class="">Line-1: A single integer representing the number of distinct ways to climb to the top.</p><h2 id="1121ff79-b8cd-80c7-9ef7-c70c030c73ba" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80cb-b32f-cd7f70243191" class="">2</p><h2 id="1121ff79-b8cd-802d-80ad-eaafab3894cd" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8074-949d-ea744baf5b85" class="">2</p><p id="1121ff79-b8cd-8059-8374-da6e8f1704e5" class="">Explanation: There are two ways to climb to the top:</p><p id="1121ff79-b8cd-80dc-a547-f38fdb317d26" class="">1 step + 1 step</p><p id="1121ff79-b8cd-803c-bc78-c121c171698f" class="">2 steps</p><h2 id="1121ff79-b8cd-80e9-9cd0-d2b597faf0ca" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80a4-a7a8-fc337d2cf9ea" class="">3</p><h2 id="1121ff79-b8cd-80e7-bee7-cc3b15c8398d" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80dd-943f-dfcc916de610" class="">3</p><p id="1121ff79-b8cd-80dc-9c90-f38f47b8f071" class="">Explanation: There are three ways to climb to the top:</p><p id="1121ff79-b8cd-8027-b0b0-d80e4af1e16d" class="">1 step + 1 step + 1 step</p><p id="1121ff79-b8cd-8057-9de2-eca9cb303c8d" class="">1 step + 2 steps</p><p id="1121ff79-b8cd-80e2-99cf-c8aa7b93dd91" class="">2 steps + 1 step</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80b9-9ab6-f03b270eace9" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static int climbStairs(int n,int[] dp)
+    {
+        if(n&lt;=2) return n;
+        
+        if(dp[n]!=-1)
+        {
+            return dp[n];
+        }
+        return dp[n]=climbStairs(n-1,dp) + climbStairs(n-2,dp);
+    }
+    
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] dp = new int[n+1];
+        Arrays.fill(dp,-1);
+        
+        System.out.println(climbStairs(n,dp));
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-8050-8764-e4916d97e02e" class=""><strong>Non overlapping substring</strong></h1><p id="1121ff79-b8cd-805e-a501-fe5ade0b8ed2" class="">Imagine you are working on a string manipulation project, and you need to find all possible ways to split a given string into non-overlapping substrings.</p><p id="1121ff79-b8cd-808e-81a0-ecb031fcc25e" class="">These substrings should be enclosed in curly braces {}, and you want to list all possible combinations of how the string can be divided.</p><p id="1121ff79-b8cd-80fd-b550-dffbb893a5d7" class="">Write a program that takes a string as input and returns all possible ways to group non-overlapping substrings within curly braces.</p><h2 id="1121ff79-b8cd-8071-9df4-d07f5b821b71" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80f9-aeae-f526c3f336b4" class="">Line-1: A single string s consisting of lowercase or uppercase letters, numbers, or punctuation.</p><h2 id="1121ff79-b8cd-8002-8fe4-fde3a06786e3" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8014-b6cb-d4e41e4c87dc" class="">Line-1 to n: Print all possible combinations of non-overlapping substrings, each combination enclosed in curly braces {}.</p><h2 id="1121ff79-b8cd-80df-8f43-c7e7f00019a9" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-801d-b75c-e6bb933f1fe2" class="">abcd</p><h2 id="1121ff79-b8cd-80f0-920a-db8676ea336c" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80c6-9d2c-e7ddc00148d0" class="">{abcd}</p><p id="1121ff79-b8cd-80f2-8fea-f50e3e6274a0" class="">{abc}{d}</p><p id="1121ff79-b8cd-8025-ae65-fbae0a9b6fc1" class="">{ab}{cd}</p><p id="1121ff79-b8cd-80c2-9495-c2c021441b48" class="">{ab}{c}{d}</p><p id="1121ff79-b8cd-805c-9043-e49b2c1fa20b" class="">{a}{bcd}</p><p id="1121ff79-b8cd-80f3-9980-e311544f4a58" class="">{a}{bc}{d}</p><p id="1121ff79-b8cd-80ff-8dfe-ce4bc975fe98" class="">{a}{b}{cd}</p><p id="1121ff79-b8cd-80ca-bb87-d2521a9b3b95" class="">{a}{b}{c}{d}</p><h2 id="1121ff79-b8cd-80fa-aac5-ee33e7ca2f31" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8076-847c-d2d868ad8cd9" class="">kmit</p><h2 id="1121ff79-b8cd-80f6-a500-c3ae6ccd75e3" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-8029-9d85-c47d215859f7" class="">{kmit}</p><p id="1121ff79-b8cd-806d-9d7b-cd56d685d33f" class="">{kmi}{t}</p><p id="1121ff79-b8cd-8034-9c7a-cbe8f9a2c4c3" class="">{km}{it}</p><p id="1121ff79-b8cd-80e5-a71d-f7e6de4dbf6e" class="">{km}{i}{t}</p><p id="1121ff79-b8cd-8003-940d-e18ce631f969" class="">{k}{mit}</p><p id="1121ff79-b8cd-8083-b43c-ce4a172ecee2" class="">{k}{mi}{t}</p><p id="1121ff79-b8cd-8007-90f2-e44e9d44fae4" class="">{k}{m}{it}</p><p id="1121ff79-b8cd-804d-b8dd-c451ef773da9" class="">{k}{m}{i}{t}</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-806b-b493-dfc01399a3e1" class="code"><code class="language-Bash">import java.util.*;
+class Solution{
+    static void calc(int i, int n, ArrayList&lt;String&gt; l, String s, String t) {
+        if(i == n) {  
+            l.add(t.substring(1));  
+            // System.out.println(l);
+            return;
+        }
+        for(int ind = i; ind &lt; n; ind++) {
+            String a = s.substring(i, ind+1);
+            calc(ind+1, n, l, s, t + &quot;#&quot; + a);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        ArrayList&lt;String&gt; l = new ArrayList&lt;&gt;();
+        calc(0, s.length(), l, s, &quot;&quot;);
+        // System.out.println(l);
+        Collections.reverse(l);
+        for(int i=0;i&lt;l.size();i++)
+        {
+            String arr[]=l.get(i).split(&quot;#&quot;);
+            for(int j=0;j&lt;arr.length;j++)
+            {
+                System.out.print(&quot;{&quot;+arr[j]+&quot;}&quot;);
+            }
+            System.out.println();
+        }
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80fa-b4e0-ffb4b238a10c" class=""><strong>Reverse a string</strong></h1><p id="1121ff79-b8cd-8067-a931-ea8f68bae689" class="">Given a string s, write a recursive function to reverse the string.</p><p id="1121ff79-b8cd-805f-8764-edaa63fb938c" class="">You are not allowed to use any built-in string manipulation functions.</p><h2 id="1121ff79-b8cd-80a3-9a60-f08fd7251f2a" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80bd-99b9-de9078cf00bc" class="">The input string s consists of printable ASCII characters (including spaces, punctuation, etc.).</p><p id="1121ff79-b8cd-805e-95a6-e73c03a9a1ff" class="">The length of the string s is between 1 and 1000.</p><p id="1121ff79-b8cd-80cb-ac5a-f27d1be8d710" class="">You must reverse the string recursively.</p><h2 id="1121ff79-b8cd-8073-8019-dc1c02a6be96" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80f0-91b4-d8bc8c704b93" class="">Line-1: A single string s, containing characters that need to be reversed.</p><h2 id="1121ff79-b8cd-8042-8e59-f94494726436" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-809a-8240-c68a465e6d36" class="">Line-1: A single string, representing the reversed input string.</p><h2 id="1121ff79-b8cd-802f-aecc-cd1509e63c4f" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-8063-8b3c-ff31b6738e9c" class="">hello</p><h2 id="1121ff79-b8cd-80b0-93b0-f5ac9b3eca15" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-806d-b61d-e2d4b8f6b9f0" class="">olleh</p><h2 id="1121ff79-b8cd-804a-ae87-c69a941ba71f" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8005-aef4-d3ed96ae23fe" class="">12345</p><h2 id="1121ff79-b8cd-8017-99d5-ed6ec77e3414" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-806c-896c-ca63e20fb28c" class="">54321</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80e1-ad0c-d6866105a4c1" class="code"><code class="language-Bash">import java.util.*;
+public class Solution {
+    public static String reverseString(String s, int i, StringBuilder sb) {
+        if(i==s.length()) {
+            return sb.toString();
+        }
+        reverseString(s, i+1, sb);
+        sb.append(s.charAt(i));
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(reverseString(sc.nextLine(), 0, new StringBuilder(&quot;&quot;)));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80ab-82a5-d706d0f4fa7f" class=""><strong>Happy Number</strong></h1><p id="1121ff79-b8cd-8071-9971-fa33f8e6beea" class="">Write an algorithm to determine if a number n is a happy number.</p><p id="1121ff79-b8cd-80ec-8ebb-c0ba1362509c" class="">A happy number is a number defined by the following process:</p><p id="1121ff79-b8cd-806d-b13a-f1995fbdc9a5" class="">Starting with any positive integer, replace the number by the sum of the squares of its digits.</p><p id="1121ff79-b8cd-80c8-aa09-ec35792cc7a5" class="">Repeat the process until the number equals 1 (where it will remain), or it loops endlessly in a cycle that does not include 1.</p><p id="1121ff79-b8cd-8011-be2f-d9b4f754a520" class="">If the number eventually reaches 1, then the number is happy. Otherwise, it is not.</p><h2 id="1121ff79-b8cd-809f-a9b7-eec18de89f74" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80d6-94aa-c8aaa5bf49a3" class="">1 ≤ n ≤ 2³¹ - 1</p><p id="1121ff79-b8cd-8002-97c5-ea1962578ff0" class="">You must handle the case of both happy and non-happy numbers.</p><h2 id="1121ff79-b8cd-807d-8afa-e6ace7688789" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-809e-b966-c998cbc32a78" class="">Line-1: A single integer n, representing the number to be checked.</p><h2 id="1121ff79-b8cd-805d-a923-ea607c40acc2" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80ce-a33a-c7797b35a149" class="">Line-1: Return true if the input number is a happy number, otherwise return false.</p><h2 id="1121ff79-b8cd-809b-8f4d-db81c5e159ba" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-8061-a1ea-d27bd7d4c19a" class="">19</p><h2 id="1121ff79-b8cd-805a-9ae7-ccfec53b062b" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8064-960c-c593fbb13cd0" class="">true</p><p id="1121ff79-b8cd-809a-b7c0-e376c756a389" class="">Explanation:</p><p id="1121ff79-b8cd-809d-a270-ec2417de4886" class="">Process to determine if 19 is a happy number:</p><p id="1121ff79-b8cd-8054-b24f-dbde3db179cd" class="">1² + 9² = 1 + 81 = 82</p><p id="1121ff79-b8cd-80dd-96dc-ca33a367f73e" class="">8² + 2² = 64 + 4 = 68</p><p id="1121ff79-b8cd-8014-bf08-e82529b96b3e" class="">6² + 8² = 36 + 64 = 100</p><p id="1121ff79-b8cd-8064-806f-cb2e39d8296b" class="">1² + 0² + 0² = 1 (since the number reached 1, 19 is a happy number)</p><h2 id="1121ff79-b8cd-80c5-919d-ffd25f3c099a" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-808e-aa4f-d3a6941920bf" class="">2</p><h2 id="1121ff79-b8cd-8058-ad8f-cf8bd29438e6" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80f2-aeae-c69f9448b68e" class="">false</p><p id="1121ff79-b8cd-804e-9366-c686b20f79d1" class="">Explanation:</p><p id="1121ff79-b8cd-8072-b74b-f3c65802b664" class="">The process does not reach 1 and starts repeating numbers. Hence, 2 is not a happy number.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80ba-8cd9-ed16188e2624" class="code"><code class="language-Bash">import java.util.*;
+
+
+class Solution{
+    static boolean happyNumber(int n)
+    {
+        if(n==1) return true;
+        if(n==4) return false;
+
+        int sq_sum = 0;
+        while (n &gt; 0) { 
+            int digit = n % 10;
+            sq_sum += Math.pow(digit, 2);  
+            n /= 10;  
+        }
+        return happyNumber(sq_sum); 
+
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(happyNumber(n));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-8006-8975-dca20e815bff" class=""><strong>GCD</strong></h1><p id="1121ff79-b8cd-8035-9f95-c22e8fb9ec53" class="">Given an integer array nums, return the greatest common divisor (GCD) of the smallest number and the largest number in the array.</p><p id="1121ff79-b8cd-801d-9a4e-f00de20c0e49" class="">The Greatest Common Divisor (GCD) of two numbers is the largest positive integer that divides both numbers without leaving a remainder.</p><h2 id="1121ff79-b8cd-80f3-913e-c240eec7b853" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8096-bc00-d3baa57aab30" class="">2 ≤ nums.length ≤ 1000</p><p id="1121ff79-b8cd-8076-8798-cbaef18eb3d5" class="">1 ≤ nums[i] ≤ 1000</p><h2 id="1121ff79-b8cd-8023-ab28-e57138e1b52c" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8093-b193-f928f67f5288" class="">Line-1: An integer, represents size of array</p><p id="1121ff79-b8cd-806a-84a7-c64f9d8402fc" class="">Line-2: A single integer array nums of length between 2 and 1000, where each element is a positive integer ans space separated.</p><h2 id="1121ff79-b8cd-80e2-bd2e-c77602be034c" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80e8-adc3-e691b53724c2" class="">Line-2: Return the GCD of the smallest and largest numbers in the array.</p><h2 id="1121ff79-b8cd-8059-91d1-d06bc07603d7" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-802d-9961-c1b44ebe12b7" class="">5</p><p id="1121ff79-b8cd-80ed-b5ef-cf60f5211f5d" class="">2 5 6 9 10</p><h2 id="1121ff79-b8cd-8001-8be0-cdf5335c7712" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8065-8de4-fd267dea882f" class="">2</p><p id="1121ff79-b8cd-80b4-95b8-c5e5680f2ca8" class="">Explanation:</p><p id="1121ff79-b8cd-806d-920a-f8670cd1fc44" class="">The smallest number is 2 and the largest number is 10.</p><p id="1121ff79-b8cd-80f2-a71c-dd16b40f16d2" class="">The GCD of 2 and 10 is 2.</p><h2 id="1121ff79-b8cd-80cd-840a-fb4507425cb5" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8027-b29d-fd5d5d48a6fd" class="">7, 5, 6, 8, 3</p><h2 id="1121ff79-b8cd-80a7-bf37-d02e1facf708" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80d9-8288-e6a4655c3d20" class="">1</p><p id="1121ff79-b8cd-80b9-b3ce-e9a93a1adadd" class="">Explanation:</p><p id="1121ff79-b8cd-80b0-b6df-e66a7f130cfd" class="">The smallest number is 3 and the largest number is 8.</p><p id="1121ff79-b8cd-80b6-9e15-c27833dcc207" class="">The GCD of 3 and 8 is 1.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-803e-9659-f09b3dcf0df4" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static int gcd(int x,int y)
+    {
+        if(y==0) return x;
+        
+        return gcd(y,x%y);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int nums[] = new int[n];
+        for(int i=0;i&lt;n;i++) nums[i]=sc.nextInt();
+        Arrays.sort(nums);
+        int max=nums[nums.length-1];
+        int min=nums[0];
+        System.out.print(gcd(min,max));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-8084-b35e-da5bd2192535" class=""><strong>Reverse K Groups</strong></h1><p id="1121ff79-b8cd-80b7-858d-c077a2476a5d" class="">KMIT exam department is preparing seating arrangements for upcoming exams.</p><p id="1121ff79-b8cd-801d-a53b-ff99c2b041fe" class="">They want to randomize the seating plan by reversing every group of m consecutive students in a specified range of the list.</p><p id="1121ff79-b8cd-80f6-92eb-c926cbc32281" class="">You have been tasked with developing a program that generates the seating arrangement by reversing groups of m students in a subarray of student IDs, where the IDs range from 1 to n.</p><p id="1121ff79-b8cd-80b6-9078-df98fc9b07aa" class="">Your program should take the following inputs:</p><p id="1121ff79-b8cd-80fa-b2c9-e0571baa5ec6" class="">n: The total number of students (represented by numbers from 1 to n).</p><p id="1121ff79-b8cd-8016-bc14-fbeaed5406e3" class="">m: The size of the groups to be reversed.</p><p id="1121ff79-b8cd-80bd-ba3a-fd14fa520455" class="">i, j: The start and end indices of the subarray within which the reversal of groups should take place.</p><h2 id="1121ff79-b8cd-8018-866b-d100783aaa0a" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-800f-86e5-c90f474ebff1" class="">If m is larger than the size of the specified subarray (i to j), the list should remain unchanged.</p><p id="1121ff79-b8cd-80f0-b8af-d8e700b73c81" class="">If i &gt;= j, the list should remain unchanged.</p><p id="1121ff79-b8cd-802b-8b56-fcf2f0b90fa9" class="">Time Complexity:</p><p id="1121ff79-b8cd-80e4-85fc-d44510873cff" class="">O(n): The list is traversed to reverse each group, resulting in a linear time complexity proportional to the number of elements n.</p><p id="1121ff79-b8cd-808e-ba6f-e61a52ddd9d2" class="">Space Complexity:</p><p id="1121ff79-b8cd-808e-8817-e5905dcde1de" class="">O(1): The program operates in place, modifying the list without using additional space for storage.</p><h2 id="1121ff79-b8cd-80ba-9eca-ccb04d33cea8" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80c4-8920-f55dd886b31a" class="">Line-1: An Integer n, The number of students (size of the main list, from 1 to n).</p><p id="1121ff79-b8cd-80a7-928f-ea185fd679b4" class="">Line-2: An Integer m, The size of the groups of students to reverse.</p><p id="1121ff79-b8cd-809c-9e8d-cc91c1bc8888" class="">Line-3: An Integer i, The starting index of the subarray in which the reversal should start.</p><p id="1121ff79-b8cd-80a4-88f4-c860beddc5f2" class="">Line-4: An Integer j, The ending index of the subarray in which the reversal should end.</p><h2 id="1121ff79-b8cd-80ce-b03a-f5280910184b" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8025-8ea8-cd47477de9d6" class="">Line-1: Print the modified list after reversing every m consecutive students in the specified subarray.</p><h2 id="1121ff79-b8cd-802e-8e51-c2315731bb74" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80e1-be18-e9e04d084579" class="">10 //n</p><p id="1121ff79-b8cd-808b-a2ca-dfedefc743fd" class="">3 //m</p><p id="1121ff79-b8cd-8019-80c6-c5df64ca7200" class="">1 //i</p><p id="1121ff79-b8cd-8017-a03e-dfdf5c874814" class="">9 //j</p><h2 id="1121ff79-b8cd-8000-a0fd-c72e5fcbd25c" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8056-b929-ca72a2576134" class="">[1, 4, 3, 2, 7, 6, 5, 10, 9, 8]</p><p id="1121ff79-b8cd-807e-bf48-fda291ec4c39" class="">Explanation: The subarray from index 1 to 9 has 9 elements. The group size m is 3, so every 3 consecutive elements are reversed:</p><p id="1121ff79-b8cd-80f8-b6bb-e01b7bac6265" class="">Subarray: [2, 3, 4, 5, 6, 7, 8, 9, 10]</p><p id="1121ff79-b8cd-8087-b058-c279a3ef6611" class="">Reverse [2, 3, 4] -&gt; [4, 3, 2]</p><p id="1121ff79-b8cd-808b-92a7-c281b169c93b" class="">Reverse [5, 6, 7] -&gt; [7, 6, 5]</p><p id="1121ff79-b8cd-800c-b310-e5df1ad7e068" class="">Reverse [8, 9, 10] -&gt; [10, 9, 8]</p><p id="1121ff79-b8cd-80b5-8a04-ea535c5daf15" class="">Final output: [1, 4, 3, 2, 7, 6, 5, 10, 9, 8]</p><h2 id="1121ff79-b8cd-8072-ae38-f22dbe5d9a4d" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80ca-b8f5-f7984142854e" class="">10 //n</p><p id="1121ff79-b8cd-80ae-8139-f2390b9cfab1" class="">3 //m</p><p id="1121ff79-b8cd-8075-843a-e821c708c68d" class="">7 //i</p><p id="1121ff79-b8cd-8050-b01a-f863d8621fc7" class="">2 //j</p><h2 id="1121ff79-b8cd-8009-a2df-c707dedcf77b" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-802c-bb4a-c03913a12e93" class="">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p><p id="1121ff79-b8cd-80e9-a33b-f41e21febddd" class="">Explanation: The start index i (7) is greater than the end index j (2).</p><p id="1121ff79-b8cd-805c-9bf7-d1f91a5d7d76" class="">According to the problem constraints: If i &gt;= j, the list should remain unchanged.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8094-8b41-ef7079f359e4" class="code"><code class="language-Bash">import java.util.*;
+class Solution{
+    
+    static void reverse(int[] arr,int l,int r,int m)
+    {
+        if(l&lt;=r){
+            int temp=arr[l];
+            arr[l]=arr[r];
+            arr[r]=temp;
+            reverse(arr,l+1,r-1,m);
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int i=sc.nextInt();
+        int j=sc.nextInt();
+        int arr[] = new int[n];
+        for(int x=0;x&lt;n;x++) arr[x]=x+1;
+        if(i&gt;=j || m&gt;j-i+1)
+        {
+           for(int x=0;x&lt;n;x++) System.out.print(arr[x]+&quot; &quot;);
+        }
+        else{
+            for(int p = i;p&lt;=j;p+=m)
+            {if((p+m-1)&lt;=j)
+                reverse(arr,p,p+m-1,m);}
+           for(int x=0;x&lt;n;x++) System.out.print(arr[x]+&quot; &quot;);
+        }
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80df-8c77-d819fbbfd893" class=""><strong>K-th Index Symbol</strong></h1><p id="1121ff79-b8cd-8029-8f30-ce14106e268c" class="">We build a table of n rows (1-indexed). The table is generated based on the following rules:</p><p id="1121ff79-b8cd-807d-96b1-fb5b9e316a76" class="">The first row (for n = 1) contains a single symbol 0.</p><p id="1121ff79-b8cd-8016-adbd-c939befa8686" class="">For each subsequent row n, every 0 in the previous row is replaced with 01, and every 1 is replaced with 10.</p><p id="1121ff79-b8cd-8059-9ced-fff0b896d8ea" class="">The problem is to return the k-th symbol (1-indexed) in the n-th row of the table.</p><h2 id="1121ff79-b8cd-8037-9e24-fccf21bd05dc" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8017-9ffb-dbcbbb52f491" class="">Line-1: An integer, represents n is the row number</p><p id="1121ff79-b8cd-80fe-a439-c146a0883a22" class="">Line-2: An integer, represents k is the position in the row</p><h2 id="1121ff79-b8cd-8076-b543-c6c05d2148fd" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8037-ae84-e57c205488c5" class="">Line-1: Return either 0 or 1, representing the k-th symbol in the n-th row.</p><h2 id="1121ff79-b8cd-808a-b179-d15085ed6f10" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-800e-bef0-d3dea3d12514" class="">1 //n</p><p id="1121ff79-b8cd-8065-8846-f172125187c1" class="">1 //k</p><h2 id="1121ff79-b8cd-8097-9954-eaff9b462a56" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80d8-9196-c9660523fb5c" class="">0</p><h2 id="1121ff79-b8cd-8024-b4fc-cf5803d7b81d" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8049-8a2b-d8a4195055ef" class="">2 //n</p><p id="1121ff79-b8cd-80f9-b14e-fa8dc2548772" class="">1 //k</p><h2 id="1121ff79-b8cd-80a3-88a3-e5268ea818a7" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80bc-9e12-cfbd6a826605" class="">0</p><p id="1121ff79-b8cd-803d-9d02-e1d7112b94ee" class="">Explanation:</p><p id="1121ff79-b8cd-80db-8962-e7f84d4827e2" class="">row 1: 0</p><p id="1121ff79-b8cd-8077-b60c-ef9f71c19fbb" class="">row 2: 01</p><h2 id="1121ff79-b8cd-80ac-a560-cdfcd7bd2fbb" class=""><strong>Sample Input-3:</strong></h2><p id="1121ff79-b8cd-803b-bfb4-ee5cb781a4ab" class="">2 //n</p><p id="1121ff79-b8cd-8053-bd79-c6ef327bb885" class="">2 //k</p><h2 id="1121ff79-b8cd-8090-b5cb-cdc5ba3b5179" class=""><strong>Sample Output-3:</strong></h2><p id="1121ff79-b8cd-806a-b307-fe739d3f1c64" class="">1</p><p id="1121ff79-b8cd-80aa-9b84-c23092eae203" class="">Explanation:</p><p id="1121ff79-b8cd-80fc-820d-ea119c976cde" class="">row 1: 0</p><p id="1121ff79-b8cd-80e2-b688-f6769c34b8ce" class="">row 2: 01</p><p id="1121ff79-b8cd-8077-9b06-d9bb7e84c94f" class="">Constraints:</p><p id="1121ff79-b8cd-80a6-8e9e-c99f096adc68" class="">1 ≤ n ≤ 30</p><p id="1121ff79-b8cd-8030-b860-e2a03452629c" class="">1 ≤ k ≤ 2^(n-1)</p><p id="1121ff79-b8cd-808c-9d43-dfc9d50bafac" class="">Explanation on approach:</p><p id="1121ff79-b8cd-801e-ad5c-dd960cc2c46b" class="">The generation of the rows follows a pattern based on the previous row:</p><p id="1121ff79-b8cd-80c2-8e1b-d0e2c427af52" class="">For n = 1, the row is 0.</p><p id="1121ff79-b8cd-8034-b5c0-fa894ebefae0" class="">For n = 2, replace 0 with 01: the row becomes 01.</p><p id="1121ff79-b8cd-80c2-b07b-eade9abad5c3" class="">For n = 3, replace each 0 with 01 and each 1 with 10: the row becomes 0110.</p><p id="1121ff79-b8cd-803c-8a30-eb8a65461109" class="">For n = 4, the row becomes 01101001.</p><p id="1121ff79-b8cd-801a-a24e-e031e3c84d24" class="">To solve this problem recursively:</p><p id="1121ff79-b8cd-80cc-81a0-cc08c21b1f5a" class="">If k is less than or equal to half of the length of the previous row, the value is the same as in the previous row.</p><p id="1121ff79-b8cd-8025-a90e-d4a68e2e44e8" class="">Otherwise, we apply a &quot;NOT&quot; operation to the value in the second half of the previous row.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8029-a015-eadc1cef642e" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution {
+
+   
+    public static int findK(int n, int k) {
+       
+        if (n == 1) {
+            return 0;
+        }
+       
+        int mid = 1&lt;&lt;(n-2);
+
+        if (k &lt;= mid) {
+            return findK(n - 1, k);
+        } else {
+            return 1 - findK(n - 1, k - mid);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt(); 
+
+        System.out.println(findK(n, k));
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-80c1-926c-e565d1ed12de" class=""><strong>Strobogrammatic Number</strong></h1><p id="1121ff79-b8cd-8022-8457-d339b4f8316a" class="">A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).</p><p id="1121ff79-b8cd-80f4-9674-e97098fc8f21" class="">A strobogrammatic number must consist of only the digits 0, 1, 6, 8, and 9.</p><p id="1121ff79-b8cd-80c6-a0e2-d7c9b82adc40" class="">Each of these digits either remains the same or transforms into another valid strobogrammatic digit when rotated:</p><p id="1121ff79-b8cd-8030-b848-e737563aef76" class="">0 rotates to 0</p><p id="1121ff79-b8cd-801c-9b5a-d595f1f83db5" class="">1 rotates to 1</p><p id="1121ff79-b8cd-8085-8678-de53f771fc00" class="">6 rotates to 9</p><p id="1121ff79-b8cd-80c7-bd1d-e3a22e3e8dec" class="">8 rotates to 8</p><p id="1121ff79-b8cd-8017-b3c8-fd6e3fa69f77" class="">9 rotates to 6</p><p id="1121ff79-b8cd-80a6-a126-e8a83ffd30f6" class="">Given an integer n, return all strobogrammatic numbers that are of length n.</p><h2 id="1121ff79-b8cd-800d-8e3f-c989769b3e98" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8072-bad7-c1ce4fec63f5" class="">Line-1: A single integer n, representing the length of the strobogrammatic numbers to generate.</p><h2 id="1121ff79-b8cd-8009-8a7e-daf43e3a04c4" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80aa-a63c-d801280a00f0" class="">line-1: Return a list of all strobogrammatic numbers of length n. The list can be in any order.</p><h2 id="1121ff79-b8cd-80b7-bc15-f6d0778c6d4b" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-800d-a304-e3f7d83d10c2" class="">1 ≤ n ≤ 14</p><h2 id="1121ff79-b8cd-80b8-932c-d506a8678f30" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80f0-899b-c2c5d4249e29" class="">2</p><h2 id="1121ff79-b8cd-8071-b35a-f6c62b173af6" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80a9-a86b-ed244d232be9" class="">[11, 69, 88, 96]</p><h2 id="1121ff79-b8cd-8059-8d5f-d86e01155a21" class=""><strong>Explanation:</strong></h2><p id="1121ff79-b8cd-801d-b47c-dd0c6c2f4156" class="">All valid strobogrammatic numbers of length 2 are:</p><p id="1121ff79-b8cd-80d3-b55a-f7733be292ff" class="">11: Rotates to 11</p><p id="1121ff79-b8cd-809b-b981-da7d5d573964" class="">69: Rotates to 96</p><p id="1121ff79-b8cd-808b-95b0-e7868e87e91a" class="">88: Rotates to 88</p><p id="1121ff79-b8cd-807e-af16-fa5e4f8b2011" class="">96: Rotates to 69</p><h2 id="1121ff79-b8cd-809a-9b13-f340d7e00912" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-800c-99f5-ec777735bede" class="">1</p><h2 id="1121ff79-b8cd-806e-b85a-d81a33aebdd8" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80ee-bf46-ce5440702b4d" class="">[0, 1, 8]</p><h2 id="1121ff79-b8cd-80b9-bfc0-cef716d50fe1" class=""><strong>Explanation:</strong></h2><p id="1121ff79-b8cd-80a4-9080-f2855a38d8cb" class="">The strobogrammatic numbers of length 1 are:</p><p id="1121ff79-b8cd-806e-aada-dabbf012ddac" class="">0: Rotates to 0</p><p id="1121ff79-b8cd-808e-ab9d-f4096cddde66" class="">1: Rotates to 1</p><p id="1121ff79-b8cd-80fd-9f4f-d3d727a0100d" class="">8: Rotates to 8</p><p id="1121ff79-b8cd-80ed-bf10-c113bbab991f" class="">NOTE: Print the results in sorted order to pass the testcases</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8008-b8da-ce103ef53209" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    
+    static ArrayList&lt;String&gt; strobogramatic(int n)
+    {
+        return helper(n,n);
+    }
+        static String[] digit = {&quot;11&quot;,&quot;69&quot;,&quot;96&quot;,&quot;88&quot;};
+    static ArrayList&lt;String&gt; helper(int n,int m)
+    {
+        if(n==0) return new ArrayList&lt;&gt;(Arrays.asList(&quot;&quot;)); 
+        if(n==1) return new ArrayList&lt;&gt;(Arrays.asList(&quot;0&quot;,&quot;1&quot;,&quot;8&quot;)); 
+        
+        ArrayList&lt;String&gt; list = helper(n-2,m);
+        ArrayList&lt;String&gt; res = new ArrayList&lt;&gt;();
+        
+        for(int i=0;i&lt;list.size();i++)
+        {
+            String str = list.get(i);
+            if(n!=m) res.add(&quot;0&quot;+str+&quot;0&quot;);
+            
+            for(String d:digit)
+            {
+                res.add(d.charAt(0)+str+d.charAt(1));
+            }
+        }
+        return res;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        ArrayList&lt;String&gt; ans = strobogramatic(n);
+        Collections.sort(ans);
+        System.out.println(ans);
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80a2-904d-dfd655c60880" class=""><strong>String Palindrome</strong></h1><p id="1121ff79-b8cd-8076-a5ea-e8de33eb5710" class="">In your English exam, there is a question that asks you to check whether a given string is a palindrome. Using your programming skills, you need to write a program that prints True if the string is the same when reversed, and False otherwise.</p><p id="1121ff79-b8cd-801f-a32d-fcb2a92db270" class="">A palindrome is a word, phrase, or sequence that reads the same backward as forward.</p><h2 id="1121ff79-b8cd-8035-8968-d4ccf0815981" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8062-a90d-ec537f6dc2dc" class="">Line-1: A single string str, which may contain lowercase letters.</p><h2 id="1121ff79-b8cd-809a-a566-ce24304bdff6" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80e6-9504-cf32f393b4e4" class="">Line-1: Print True if the string is a palindrome, otherwise print False.</p><h2 id="1121ff79-b8cd-805e-accb-f773558ebcda" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80d6-8636-ce55cc82c5b5" class="">The string can contain up to 1000 characters.</p><h2 id="1121ff79-b8cd-80f6-bf2c-dee21f671bb2" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80b9-942f-fc2807893d77" class="">liril</p><h2 id="1121ff79-b8cd-808a-a844-d35785457446" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80c7-b1a2-dd78d2929490" class="">True</p><h2 id="1121ff79-b8cd-8088-a3f7-f3509d00b8c6" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8093-8463-da20dbacbc7e" class="">genesis</p><h2 id="1121ff79-b8cd-803d-af4c-c61f07432c6a" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80c2-b985-fbdbca73e3f2" class="">False</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-805c-90c2-dfc5867b5995" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static boolean isPalin(String s,int l,int r)
+    {
+        if(s.charAt(l)!=s.charAt(r)) return false;
+        if(l&lt;=r)
+        {
+            return isPalin(s,l+1,r-1);
+        }
+        return true;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(isPalin(s,0,s.length()-1));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80a8-aa1c-d8f508f470f0" class=""><strong>Prime Strobogrammatic and Smallest, Largest Strobogrammatic</strong></h1><p id="1121ff79-b8cd-8005-9280-d84afbb695a0" class="">A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).</p><p id="1121ff79-b8cd-805c-8ac8-e895dc9d0624" class="">A strobogrammatic number must consist of only the digits 0, 1, 6, 8, and 9.</p><p id="1121ff79-b8cd-80db-9e70-c29caa5354dc" class="">Each of these digits either remains the same or transforms into another valid strobogrammatic digit when rotated:</p><p id="1121ff79-b8cd-8028-9036-e8cf2c3ea99f" class="">0 rotates to 0</p><p id="1121ff79-b8cd-80ae-8cc4-e4be9b6a6742" class="">1 rotates to 1</p><p id="1121ff79-b8cd-809f-83f3-c03806548fbb" class="">6 rotates to 9</p><p id="1121ff79-b8cd-8027-8ed6-f082d2635048" class="">8 rotates to 8</p><p id="1121ff79-b8cd-808d-892f-d9d698634ce7" class="">9 rotates to 6</p><p id="1121ff79-b8cd-80ea-8520-f69302559ca6" class="">Given an integer n, print all prime strobogrammatic numbers that are of length n</p><p id="1121ff79-b8cd-80e1-98ad-dee3e779c337" class="">and print smallest and largest strobogrammatic numbers of length n.</p><h2 id="1121ff79-b8cd-80d9-bf57-e91b1f81b6d6" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8033-b837-ea70b3d9d43e" class="">Line-1: A single integer n, representing the length of the strobogrammatic numbers to generate.</p><h2 id="1121ff79-b8cd-80cf-af3a-cb8b52427951" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80f4-9c9f-fd5a9d76bc5a" class="">Line-1: Return a list of all prime strobogrammatic numbers of length n.</p><p id="1121ff79-b8cd-8000-90f7-da5154d1be3f" class="">Line-2: Space separated two values, smallest and largest strobogrammatic numbers of length n.</p><h2 id="1121ff79-b8cd-80b1-83b9-fb218f972d63" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80d1-b994-faa42cc6aff8" class="">1 ≤ n ≤ 14</p><h2 id="1121ff79-b8cd-80df-88bd-c2cb1715bce4" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-8057-aa6e-e6aa52f25697" class="">2</p><h2 id="1121ff79-b8cd-807d-9554-cb74151cc198" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8067-8da7-eefbf75b9e49" class="">[11]</p><p id="1121ff79-b8cd-80ed-9942-c0c48a1236f2" class="">11 96</p><h2 id="1121ff79-b8cd-8008-93b2-fd47504f5997" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80a3-82e8-f0ca28cf5490" class="">5</p><h2 id="1121ff79-b8cd-80ea-97b5-fad07e247bb2" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80d6-92a4-c3f5ef0b6866" class="">[16091, 18181, 19861, 61819]</p><p id="1121ff79-b8cd-8042-996d-e5010300a489" class="">10001 99866</p><h2 id="1121ff79-b8cd-80b9-9da5-d3961ac5d586" class=""><strong>Sample Input-3:</strong></h2><p id="1121ff79-b8cd-80b5-a1f8-de2f2a64fe6f" class="">4</p><h2 id="1121ff79-b8cd-80dc-af2e-c4ad01610ac0" class=""><strong>Sample Output-3:</strong></h2><p id="1121ff79-b8cd-80f5-a594-ff3c3e1555dc" class="">[]</p><p id="1121ff79-b8cd-8085-a23a-e5d6855777c9" class="">1001 9966</p><p id="1121ff79-b8cd-80b9-935a-c768d0cb639b" class="">NOTE: Print the results in sorted order to pass the testcases</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8091-94c9-e88e2917d96e" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    
+    static ArrayList&lt;String&gt; strobogramatic(int n)
+    {
+        return helper(n,n);
+    }
+        static String[] digit = {&quot;11&quot;,&quot;69&quot;,&quot;96&quot;,&quot;88&quot;};
+    static ArrayList&lt;String&gt; helper(int n,int m)
+    {
+        if(n==0) return new ArrayList&lt;&gt;(Arrays.asList(&quot;&quot;)); 
+        if(n==1) return new ArrayList&lt;&gt;(Arrays.asList(&quot;0&quot;,&quot;1&quot;,&quot;8&quot;)); 
+        
+        ArrayList&lt;String&gt; list = helper(n-2,m);
+        ArrayList&lt;String&gt; res = new ArrayList&lt;&gt;();
+        
+        for(int i=0;i&lt;list.size();i++)
+        {
+            String str = list.get(i);
+            if(n!=m) res.add(&quot;0&quot;+str+&quot;0&quot;);
+            
+            for(String d:digit)
+            {
+                res.add(d.charAt(0)+str+d.charAt(1));
+            }
+        }
+        return res;
+    }
+    
+    static boolean isPrime(int num)
+    {
+        for(int i=2;i&lt;num;i++)
+        {
+            if(num%i==0) return false;
+        }return true;
+    }
+    
+    static ArrayList&lt;Integer&gt; getPrimes(ArrayList&lt;String&gt; l)
+    {
+        ArrayList&lt;Integer&gt; res=new ArrayList&lt;&gt;();
+        for(int i=0;i&lt;l.size();i++)
+        {
+            if(isPrime(Integer.parseInt(l.get(i))))
+            {
+                res.add(Integer.parseInt(l.get(i)));
+            }
+        }
+        return res;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        ArrayList&lt;String&gt; ans = strobogramatic(n);
+        Collections.sort(ans);
+        
+        ArrayList&lt;Integer&gt; prime = getPrimes(ans);
+        System.out.println(prime);
+        
+        String small=ans.get(0);
+        int len=ans.size()-1;
+        String large=ans.get(len);
+        System.out.println(small+&quot; &quot;+large);
+        
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80a6-8fb0-fba9a6b3badc" class=""><strong>Prime Strobogrammatic Number</strong></h1><p id="1121ff79-b8cd-80ac-b5a7-d6d2924eb3a1" class="">A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).</p><p id="1121ff79-b8cd-80d8-8721-f6722f838afe" class="">A strobogrammatic number must consist of only the digits 0, 1, 6, 8, and 9.</p><p id="1121ff79-b8cd-80d1-b366-cd11de58eec8" class="">Each of these digits either remains the same or transforms into another valid strobogrammatic digit when rotated:</p><p id="1121ff79-b8cd-803f-b78d-d78fef937800" class="">0 rotates to 0</p><p id="1121ff79-b8cd-80f5-934e-c577bdda7041" class="">1 rotates to 1</p><p id="1121ff79-b8cd-8021-9478-e8082f1848c1" class="">6 rotates to 9</p><p id="1121ff79-b8cd-801f-bd5d-ce7949ee7761" class="">8 rotates to 8</p><p id="1121ff79-b8cd-8040-bdc0-f0a5410ce1ae" class="">9 rotates to 6</p><p id="1121ff79-b8cd-8081-843f-c96443bfb8e4" class="">Given an integer n, check is n is strobogrammatic number and prime strobogrammatic number.</p><h2 id="1121ff79-b8cd-805e-be4a-c4947bf25ec3" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-801c-8a9c-e455842b062f" class="">Line-1: A single integer n.</p><h2 id="1121ff79-b8cd-807f-8d6a-e3708ddf7771" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-80ba-94d4-e47bdb07a8c1" class="">Line-1: Space separated two boolean values, represents &quot;is strobogrammatic number&quot; and &quot;is prime strobogrammatic number&quot;.</p><h2 id="1121ff79-b8cd-804f-8c75-d0fae501d56d" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8023-b4d0-cd67504cf8b4" class="">1 ≤ n ≤ 14</p><h2 id="1121ff79-b8cd-80de-91d8-d01613d3301f" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80d3-a873-d4d3246332ac" class="">1001</p><h2 id="1121ff79-b8cd-80f4-9b7d-e431dda24523" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8003-bee9-d3a32217775e" class="">true false</p><h2 id="1121ff79-b8cd-80f2-b4c7-eecc873e0d13" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80dd-927c-f618accf0681" class="">101</p><h2 id="1121ff79-b8cd-80ac-98f9-f605c762dcd2" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80d0-ade6-eb6f0e89386b" class="">true true</p><h2 id="1121ff79-b8cd-8084-8a82-c04295949e78" class=""><strong>Sample Input-3:</strong></h2><p id="1121ff79-b8cd-80e8-8191-d57a2322364c" class="">9999</p><h2 id="1121ff79-b8cd-802c-a2d0-e7dd52944654" class=""><strong>Sample Output-3:</strong></h2><p id="1121ff79-b8cd-8002-86e7-f13a90d762bf" class="">false false</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8084-8069-c2437af1f2a4" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution {
+
+    static boolean isStrobogramatic(int n) {
+        String m = Integer.toString(n);
+        int l = 0;
+        int r = m.length() - 1;
+    
+        while (l &lt;= r) {
+            char left = m.charAt(l);
+            char right = m.charAt(r);
+            
+            if ((left == &#x27;0&#x27; &amp;&amp; right == &#x27;0&#x27;) || 
+                (left == &#x27;1&#x27; &amp;&amp; right == &#x27;1&#x27;) || 
+                (left == &#x27;8&#x27; &amp;&amp; right == &#x27;8&#x27;) || 
+                (left == &#x27;6&#x27; &amp;&amp; right == &#x27;9&#x27;) || 
+                (left == &#x27;9&#x27; &amp;&amp; right == &#x27;6&#x27;)) {
+                l++;
+                r--;
+                } else {
+                return false; 
+                }
+        }
+        return true; 
+    }
+    
+    static boolean isPrime(int num) {
+        if(num==0 || num==1)return false;
+        for (int i = 2; i*i &lt;= num; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        boolean s =  isStrobogramatic(n);
+        System.out.print(s + &quot; &quot;);
+        if(s) System.out.print(isPrime(n));
+        else System.out.print(false);
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-80eb-9069-d2480c5b6f94" class=""><strong>Quick Sort</strong></h1><p id="1121ff79-b8cd-8079-9b30-f6302bd3c688" class="">You are given an unsorted array of integers.</p><p id="1121ff79-b8cd-808e-a3ef-fdddcd8c7528" class="">Your task is to implement the QuickSort algorithm to sort the array in ascending order.</p><p id="1121ff79-b8cd-8020-8918-da02fe462a25" class="">QuickSort is a divide-and-conquer algorithm that:</p><ul id="1121ff79-b8cd-8092-adc4-c4225b2bd0ba" class="bulleted-list"><li style="list-style-type:disc">Picks an element as a pivot and partitions the given array around the pivot.</li></ul><ul id="1121ff79-b8cd-80ed-9e31-f83eabd1967d" class="bulleted-list"><li style="list-style-type:disc">Recursively applies the same process to the subarrays on the left and right of the pivot.</li></ul><ul id="1121ff79-b8cd-80b7-be0f-f6ec1a02da53" class="bulleted-list"><li style="list-style-type:disc">You need to implement QuickSort using the Lomuto partition scheme (where the pivot is chosen as the last element of the array).</li></ul><h2 id="1121ff79-b8cd-80bc-9687-d556948f274d" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8057-826d-d11b911060f2" class="">Line-1: An integer n (the size of the array).</p><p id="1121ff79-b8cd-8004-9164-fc8819c1e5cb" class="">Line-2: n space-separated integers representing the elements of the array.</p><h2 id="1121ff79-b8cd-8095-8fa5-db058a230568" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-800e-a033-ecf70776e347" class="">Line-1: Output the sorted array in a single line, with each element separated by a space.</p><h2 id="1121ff79-b8cd-80c8-a74d-ed83c1b131ab" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-8031-96ec-f79ce098e2cc" class="">1 ≤ n ≤ 10^5</p><ul id="1121ff79-b8cd-8067-8af6-f01590fcc7f2" class="bulleted-list"><li style="list-style-type:disc">10^9 ≤ arr[i] ≤ 10^9</li></ul><h2 id="1121ff79-b8cd-804b-badd-ff3f9e3da2d5" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80c7-a967-dd496032ebef" class="">6</p><p id="1121ff79-b8cd-80d7-86c5-d21b2a3778da" class="">10 7 8 9 1 5</p><h2 id="1121ff79-b8cd-807e-8c04-f200dbf9b49e" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8072-b993-daaa5d7a6ded" class="">1 5 7 8 9 10</p><h2 id="1121ff79-b8cd-80c1-ae68-f8776bf17843" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80d7-b877-d24e1cd48437" class="">5</p><p id="1121ff79-b8cd-8088-a036-e7afef042b9e" class="">3 2 1 5 4</p><h2 id="1121ff79-b8cd-8075-b31a-eea281539996" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80f3-b618-e718ebf3650a" class="">1 2 3 4 5</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8093-a90a-f579c44fec17" class="code"><code class="language-Bash">import java.util.*;
+
+public class Solution {
+
+    static void swap(int arr[], int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    static int partition(int arr[], int low, int high) {
+        int pivot = low;
+        int i = low + 1;
+        int j = high;
+        while (i &lt;= j) {
+            
+            while (i &lt;= high &amp;&amp; arr[i] &lt;= arr[pivot]) {
+                i++;
+            }
+            while (arr[j] &gt; arr[pivot]) {
+                j--;
+            }
+            if (i &lt; j) {
+                swap(arr, i, j);
+            }
+        }
+        
+        swap(arr, j, pivot);
+
+        return j;
+    }
+
+    static void quickSort(int[] arr, int low, int high) {
+        if (low &lt; high) {
+            int pivot = partition(arr, low, high);
+            quickSort(arr, low, pivot - 1);
+            quickSort(arr, pivot + 1, high); 
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i&lt;n;i++) arr[i]=sc.nextInt();
+        quickSort(arr, 0, arr.length - 1);
+        for (int i = 0; i &lt; arr.length; i++) {
+            System.out.print(arr[i] + &quot; &quot;);
+        }
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-800b-9bbd-e6bcebc45bae" class=""><strong>Merge Sort</strong></h1><p id="1121ff79-b8cd-8086-b94b-f59c48870daa" class="">You are given an unsorted array of integers.</p><p id="1121ff79-b8cd-80d9-b8e4-e8a4d4738ec7" class="">Your task is to implement the MergeSort algorithm to sort the array in ascending order.</p><p id="1121ff79-b8cd-805f-afa6-e4492afc9ed1" class="">MergeSort is a divide-and-conquer algorithm that:</p><ul id="1121ff79-b8cd-80f6-9d0e-cd56e11fa304" class="bulleted-list"><li style="list-style-type:disc">Divides the array into two halves.</li></ul><ul id="1121ff79-b8cd-8039-8666-e8543e902210" class="bulleted-list"><li style="list-style-type:disc">Recursively sorts the two halves.</li></ul><ul id="1121ff79-b8cd-801d-9316-f1e5656c84cb" class="bulleted-list"><li style="list-style-type:disc">Merges the two sorted halves to produce the final sorted array.</li></ul><ul id="1121ff79-b8cd-806c-80a9-ceb2b39d5ef3" class="bulleted-list"><li style="list-style-type:disc">Your task is to write a function that sorts the given array using MergeSort.</li></ul><h2 id="1121ff79-b8cd-8023-bba6-dfb7b6b23f07" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-8009-b4d0-ef54c62db17f" class="">Line-1: An integer n (the size of the array).</p><p id="1121ff79-b8cd-8046-97f2-f80846378142" class="">Line-2: n space-separated integers representing the elements of the array.</p><h2 id="1121ff79-b8cd-8084-9f0e-f17142d1ee64" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8063-baed-fa1f6f2e6598" class="">Line-1: Output the sorted array in a single line, with each element separated by a space.</p><h2 id="1121ff79-b8cd-804b-a0b0-e1be95f03324" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80c0-985b-f26b2f2b0f92" class="">1 ≤ n ≤ 10^5</p><ul id="1121ff79-b8cd-8091-9e70-ff4fae3bba77" class="bulleted-list"><li style="list-style-type:disc">10^9 ≤ arr[i] ≤ 10^9</li></ul><h2 id="1121ff79-b8cd-80a6-bc84-f6dfa3fc1172" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80a5-bca8-db50e01fc1d0" class="">6</p><p id="1121ff79-b8cd-8036-8df2-e7c21602959d" class="">12 11 13 5 6 7</p><h2 id="1121ff79-b8cd-804b-99ce-d826846f4aa5" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8013-b021-ca25435ceaf8" class="">5 6 7 11 12 13</p><h2 id="1121ff79-b8cd-80cb-8b0e-f8f6c189ac64" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80d4-a111-cb54e66e0fa2" class="">5</p><p id="1121ff79-b8cd-801b-8b69-d7071e5feadc" class="">10 1 2 8 5</p><h2 id="1121ff79-b8cd-8068-895d-fd876875bac3" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-8088-9cdc-fd6402134687" class="">1 2 5 8 10</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80e5-a3ef-cfc1f20a3079" class="code"><code class="language-Bash">import java.util.*;
+
+public class Solution {
+
+    static void merge(int arr[],int low,int mid,int high){
+        int i=low,k=low,j=mid+1;
+        int b[] = new int[high+1];
+        while(i&lt;=mid &amp;&amp; j&lt;=high){
+            if(arr[i]&lt;=arr[j]){
+                b[k++]=arr[i++];
+            }
+            else{
+                b[k++]=arr[j++];
+            }
+        }
+        if(j&gt;high){
+            while(i&lt;=mid){
+                b[k++]=arr[i++];
+            }
+        }
+        else{
+            while(j&lt;=high){
+                b[k++]=arr[j++];
+            }   
+        }
+        for(i=low;i&lt;=high;i++){
+            arr[i]=b[i];
+        }
+
+    }
+
+    static void sort(int arr[],int low,int high){
+        if(low&lt;high){
+            int mid = (low+high)/2;
+            //System.out.println(low+&quot; 1st  &quot;+high);
+            sort(arr,low,mid);
+            //System.out.println(low+&quot; 2nd &quot;+high);
+            sort(arr,mid+1,high);
+            //System.out.println(low+&quot; merge &quot;+high);
+            merge(arr,low,mid,high);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        sort(arr, 0, n - 1);
+        for(int i=0;i&lt;n;i++){
+            System.out.print(arr[i]+&quot; &quot;);
+        }
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-80dd-9c09-c0163f4cbae1" class=""><strong>Majority Element</strong></h1><p id="1121ff79-b8cd-80d8-aabe-cf64d871b227" class="">Given an array nums of size n, return the majority element.</p><p id="1121ff79-b8cd-80e4-8b3c-f43deb32c5e7" class="">The majority element is the element that appears more than ⌊n / 2⌋ times.</p><p id="1121ff79-b8cd-80a6-8472-f47fec8cd1f3" class="">You may assume that the majority element always exists in the array.</p><h2 id="1121ff79-b8cd-8011-90c4-feb661d46850" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80e4-88b7-e6e67e4533d7" class="">Line-1: An integer n (the size of the array).</p><p id="1121ff79-b8cd-802b-96db-e6fdee59edd0" class="">Line-2: n space-separated integers representing the elements of the array.</p><h2 id="1121ff79-b8cd-8086-aa91-d59d1677cffb" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8036-93d1-dcd37844b8af" class="">Line-1: Output a single integer, the majority element.</p><h2 id="1121ff79-b8cd-80b3-8fb4-ee88e59c3765" class=""><strong>Constraints:</strong></h2><p id="1121ff79-b8cd-80af-97c5-f373fc168550" class="">1 ≤ n ≤ 5 * 10^4</p><ul id="1121ff79-b8cd-8060-900e-e51d27619fd7" class="bulleted-list"><li style="list-style-type:disc">10^9 ≤ nums[i] ≤ 10^9</li></ul><h2 id="1121ff79-b8cd-80c0-b8ec-dd1f2e8cb3b2" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80ac-be6a-f7d67f9398c2" class="">3</p><p id="1121ff79-b8cd-8095-be0b-fe67c60d75a9" class="">3 2 3</p><h2 id="1121ff79-b8cd-806d-80f1-d91c4da0ab7b" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8032-9b2a-ca729c5ccf2d" class="">3</p><p id="1121ff79-b8cd-8051-afdb-e6f4295192ca" class="">Explanation:</p><p id="1121ff79-b8cd-809b-a840-f7fa4f5e6f78" class="">The number 3 appears more than n/2 times, so it is the majority element.</p><h2 id="1121ff79-b8cd-8002-b49f-fdd8e44403e2" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8063-8ee3-e73cb66f28f8" class="">7</p><p id="1121ff79-b8cd-80ba-8a8f-c7f57bef58c3" class="">2 2 1 1 1 2 2</p><h2 id="1121ff79-b8cd-8007-b17d-ca7487a3c80c" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80c7-9b82-c1530e52235e" class="">2</p><p id="1121ff79-b8cd-80ab-9534-fd7b3b20d074" class="">Explanation:</p><p id="1121ff79-b8cd-8013-9127-e0a360555bc1" class="">The number 2 appears 4 times, which is more than n/2 = 3.5, so it is the majority element.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80fc-9421-d0018b9fecdc" class="code"><code class="language-Bash">import java.util.*;
+class Solution{
+    
+    static int majority(int[] arr,int left,int right)
+    {
+        if(left==right) return arr[left];
+        
+        int mid = (right-left)/2 + left;
+        
+        int leftM = majority(arr,left,mid);
+        int rightM = majority(arr,mid+1,right);
+        
+        int leftC = majFreq(arr,left,right,leftM);
+        int rightC = majFreq(arr,left,right,rightM);
+        
+        return (leftC&gt;rightC)?leftM:rightM;
+
+    }
+    
+    static int majFreq(int[] arr, int l, int r,int maj)
+    {
+        int c=0;
+        for(int i=l;i&lt;=r;i++)
+        {
+            if(arr[i]==maj) c++;
+        }
+        return c;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println(majority(arr,0,n-1));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-8015-b86f-debeb48c163e" class=""><strong>Power of n</strong></h1><p id="1121ff79-b8cd-8084-9c0e-c860493874d5" class="">A school kid named John Doe, wants to find the value of N^P</p><p id="1121ff79-b8cd-80d9-b067-fef608e93b86" class="">Pth power of a number N.</p><p id="1121ff79-b8cd-802a-8de1-ebebc3d94b45" class="">You will be given two integers N and P.</p><p id="1121ff79-b8cd-8081-8e9f-d8f607aa08bd" class="">Your task is to help John Doe to find the value of N^P.</p><h2 id="1121ff79-b8cd-80c3-83e3-d54c31ebeaeb" class=""><strong>NOTE:</strong></h2><p id="1121ff79-b8cd-80a1-b3b5-d80aa82a9a3e" class="">Value of N and P can be both positive and negative</p><h2 id="1121ff79-b8cd-807d-aabf-dee5de388c93" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80da-8a13-f69846fcb54e" class="">Line-1: Two integers N and P, where N is the number and P is the power</p><h2 id="1121ff79-b8cd-8006-a527-d30775731c15" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8010-a5f7-e4697faed132" class="">Line-1: Print a float number, N power P</p><h2 id="1121ff79-b8cd-80bd-8842-f643897e48f2" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80c5-97fd-d781eddfdd9a" class="">3 2</p><h2 id="1121ff79-b8cd-8060-a257-cb9aa18a1227" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-809f-9b88-d7d4726e3ae1" class="">9.000000</p><h2 id="1121ff79-b8cd-803b-a96b-e72218c9654c" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-809c-ba27-e34d1bb45fae" class="">2 -3</p><h2 id="1121ff79-b8cd-80fc-af53-f242baf12826" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80bf-91eb-dacf812a0764" class="">0.125000</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-803c-a059-fac265497830" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static float power(int x,int n)
+    {
+        if(n==0) return 1;
+        
+        float temp = power(x,n/2);
+        
+        if(n%2==0) return temp*temp;
+        else{
+            if(n&gt;0) return x*temp*temp;
+            else return (temp*temp)/x;
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int x=sc.nextInt();
+        int n=sc.nextInt();
+        System.out.println(power(x,n));
+    }
+}</code></pre><h1 id="1121ff79-b8cd-80d3-baa5-f8edbe1c811d" class=""><strong>Rearrange Numbers</strong></h1><p id="1121ff79-b8cd-808b-9979-dca69f0ec98a" class="">You are given an array of integers containing both positive and negative values.</p><p id="1121ff79-b8cd-8089-82d9-f0de7e9e0fb8" class="">Your task is to rearrange the array such that all negative integers appear before the positive integers while preserving the relative order of the numbers.</p><p id="1121ff79-b8cd-80eb-b52f-d59d851d13c7" class="">The order of positive and negative integers in the array should remain unchanged, but negatives must come before positives.</p><h2 id="1121ff79-b8cd-800f-b0e6-eb9ccf718cf8" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80f1-9f18-c09affe91708" class="">Line-1: An integer n, the number of integers in the array.</p><p id="1121ff79-b8cd-80b0-bf22-e40b9ffc9855" class="">Line-2: n integers, which are a mix of positive and negative numbers.</p><h2 id="1121ff79-b8cd-8063-9d69-fb3044777aa3" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-809f-81eb-deff49b73e99" class="">Line-1: Print the rearranged list of integers where all negative numbers come before the positive numbers while preserving the relative order.</p><h2 id="1121ff79-b8cd-8000-80f0-d42c3ff8baa0" class=""><strong>Constraints:</strong></h2><ul id="1121ff79-b8cd-8063-93e6-dfdedf9396de" class="bulleted-list"><li style="list-style-type:disc">1 ≤ n ≤ 10^5 (The size of the array can be up to 100,000 integers).</li></ul><ul id="1121ff79-b8cd-807b-b3d0-e5f48b3251e7" class="bulleted-list"><li style="list-style-type:disc">The array contains both positive and negative integers. Zero is considered as a positive number.</li></ul><h2 id="1121ff79-b8cd-8048-aaac-cc7be82eeea3" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-8032-902d-e5c04ae5a963" class="">8</p><p id="1121ff79-b8cd-80b7-9782-d5f88c9fcdb1" class="">9 -3 5 -2 -8 -6 1 3</p><p id="1121ff79-b8cd-80d0-8f8b-e71dcd014ea1" class="">Sample Output-1:</p><p id="1121ff79-b8cd-807b-9cc9-cecac44954b9" class="">[-3, -2, -8, -6, 9, 5, 1, 3]</p><h2 id="1121ff79-b8cd-80f8-90b5-f4b8f669cbad" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8030-bd9d-ccae2ba2b183" class="">8</p><p id="1121ff79-b8cd-8052-8591-e49423b37ed7" class="">5 -4 3 -4 2 1 -5 -6</p><h2 id="1121ff79-b8cd-8021-ba1a-e50bb97d4ec2" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80db-b1d2-d03c5964176e" class="">[-4, -4, -5, -6, 5, 3, 2, 1]</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80e7-9c27-e890a4a805f9" class="code"><code class="language-Bash">import java.util.*;
+
+public class Solution {
+
+    static void merge(int arr[],int low,int mid,int high){
+        int i=low;
+        int j=mid+1;
+        int k=low;
+        int b[] = new int[high+1];
+        while(i&lt;=mid &amp;&amp; j&lt;=high){
+            if(arr[i]&lt;0){
+                b[k++]=arr[i++];
+            }
+            else if(arr[j]&lt;0){
+                b[k++]=arr[j++];
+            }
+            else{
+                b[k++]=arr[i++];
+            }
+        }
+        if(j&gt;high){
+            while(i&lt;=mid){
+                b[k++]=arr[i++];
+            }
+        }
+        else{
+            while(j&lt;=high){
+                b[k++]=arr[j++];
+            }   
+        }
+        for(i=low;i&lt;=high;i++){
+            arr[i]=b[i];
+        }
+
+    }
+
+    static void sort(int arr[],int low,int high){
+        if(low&lt;high){
+            int mid = (low+high)/2;
+            //System.out.println(low+&quot; 1st  &quot;+high);
+            sort(arr,low,mid);
+            //System.out.println(low+&quot; 2nd &quot;+high);
+            sort(arr,mid+1,high);
+            //System.out.println(low+&quot; merge &quot;+high);
+            merge(arr,low,mid,high);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        sort(arr, 0, n - 1);
+        for(int i=0;i&lt;n;i++){
+            System.out.print(arr[i]+&quot; &quot;);
+        }
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-8023-9a83-de9d136e7a32" class=""><strong>Identifying Peak Houses</strong></h1><p id="1121ff79-b8cd-80ae-979a-d4b588069f13" class="">In a city, a survey is being conducted to identify special houses known as &quot;peaks.&quot;</p><p id="1121ff79-b8cd-80e6-ad8f-ec6d8da0b783" class="">A peak house is defined as one whose height is greater than its immediate neighbors.</p><p id="1121ff79-b8cd-807a-95fb-ce6b4411d6f8" class="">For houses on the boundary (first and last in the array), a peak is a house that is greater than its single neighbor.</p><p id="1121ff79-b8cd-80ef-bb07-d0160e014bf0" class="">Your task is to assist the surveyor by writing a program that identifies and prints the heights of all peak houses in sorted order.</p><h2 id="1121ff79-b8cd-8097-b5b8-d9360c7f6f58" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-80cd-a91f-e105dd885f94" class="">Line-1: An integer n (the number of houses).</p><p id="1121ff79-b8cd-805d-be0d-e060caa82226" class="">Line-2: n distinct integers, representing the heights of the houses.</p><h2 id="1121ff79-b8cd-80b2-a27e-c2c3aafe9596" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-8070-8778-d70e7861c343" class="">Line-1: Print a list of peak house heights in sorted order.</p><p id="1121ff79-b8cd-8031-b551-cab63cb6090b" class="">Constraints:</p><p id="1121ff79-b8cd-8061-9060-e3a8c797fa2c" class="">1 ≤ n ≤ 10^5 (i.e., up to 100,000 houses)</p><p id="1121ff79-b8cd-80b5-bee2-dbd57c34a14d" class="">Heights of houses are distinct and can be any integer between -10^9 and 10^9.</p><p id="1121ff79-b8cd-80f4-acfe-eb40f6153707" class="">Definitions:</p><p id="1121ff79-b8cd-8039-bc86-fe1f7422be3b" class="">A peak house is a house where its height is greater than both its neighboring houses.</p><p id="1121ff79-b8cd-801c-9d21-e6fe464e08c2" class="">For the first house, it is a peak if it is greater than the second house.</p><p id="1121ff79-b8cd-8042-ba79-f9849130cc31" class="">For the last house, it is a peak if it is greater than the second-to-last house.</p><h2 id="1121ff79-b8cd-8059-9ee1-c7e40d66bf99" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-80ad-bd2c-e4023838a36e" class="">8</p><p id="1121ff79-b8cd-803a-87b2-c81dbf8f8f14" class="">9 4 5 3 8 7 10 11</p><h2 id="1121ff79-b8cd-8052-b22d-d03ecfc48ada" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-8053-938c-ca3f0a207bd6" class="">[5, 8, 9, 11]</p><p id="1121ff79-b8cd-80e2-8624-f956f9669af4" class="">Explanation:</p><p id="1121ff79-b8cd-80f8-91ec-f30ae6277b00" class="">House heights 5, 8, 9, and 11 are peaks as they are greater than their neighboring houses.</p><h2 id="1121ff79-b8cd-80b9-9e37-f409d60573a8" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-8052-b8a0-ec5febc4d851" class="">10</p><p id="1121ff79-b8cd-80ad-9790-e600b5b34171" class="">1 2 3 4 5 6 7 8 9 10</p><h2 id="1121ff79-b8cd-804c-b0f7-e48b1162ac07" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-80f8-99bd-eb9510e39e6c" class="">[10]</p><p id="1121ff79-b8cd-80c4-baba-dd15ace55006" class="">Explanation:</p><p id="1121ff79-b8cd-80e0-b016-fb04e9f42a30" class="">Only 10 is a peak because it is greater than its only neighbor, 9.</p><h2 id="1121ff79-b8cd-80e7-ac15-f1bb68241d1f" class=""><strong>Sample Input-3:</strong></h2><p id="1121ff79-b8cd-8082-bc4f-c5176406b7b8" class="">10</p><p id="1121ff79-b8cd-800e-af31-db90075838a2" class="">10 9 8 7 6 5 4 3 2 1</p><h2 id="1121ff79-b8cd-8002-bc77-cb48bbee8061" class=""><strong>Sample Output-3:</strong></h2><p id="1121ff79-b8cd-80d1-a873-e52bba94cd2a" class="">[10]</p><p id="1121ff79-b8cd-8007-9a19-d4dcac416a25" class="">Explanation:</p><p id="1121ff79-b8cd-8035-a695-d8b1d4366aef" class="">Only 10 is a peak because it is greater than 9, its only neighbor on the right.</p><h2 id="1121ff79-b8cd-8042-9c46-dd683f2cb815" class=""><strong>Sample Input-4:</strong></h2><p id="1121ff79-b8cd-801a-89d9-dbeb4c0695e0" class="">10</p><p id="1121ff79-b8cd-800f-89ba-f1539a474c51" class="">1 2 3 4 5 10 6 7 8 9</p><h2 id="1121ff79-b8cd-803c-8a1a-f3eb4ba74440" class=""><strong>Sample Output-4:</strong></h2><p id="1121ff79-b8cd-8089-8b8b-c046d7e5704e" class="">[9, 10]</p><p id="1121ff79-b8cd-80dd-93b7-f1aaf8984a66" class="">Explanation:</p><p id="1121ff79-b8cd-803a-826c-db819c0a6794" class="">The houses 9 and 10 are peaks since they are greater than their immediate neighbors.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-80be-a687-e2649b9d9567" class="code"><code class="language-Bash">import java.util.*;
+
+public class Solution {
+
+    static List&lt;List&lt;Integer&gt;&gt; ans = new ArrayList&lt;&gt;();
+
+    static void merge(int arr[],int low,int high){
+        List&lt;Integer&gt; b = new ArrayList&lt;&gt;();
+        
+         if (low == 0 &amp;&amp; arr[low] &gt; arr[low + 1]) {
+            b.add(arr[low]);
+         }
+
+        if (high == arr.length - 1 &amp;&amp; arr[high] &gt; arr[high - 1]) {
+            b.add(arr[high]);
+        }
+        
+        int i=low+1;
+        while(i&lt;high){
+            if(arr[i]&gt;arr[i+1] &amp;&amp; arr[i]&gt;arr[i-1])
+            {
+                b.add(arr[i]);
+            }
+            i++;
+        }
+        System.out.println(b);
+        Collections.sort(b);
+        ans.add(b);
+
+    }
+
+    static void findPeak(int arr[],int low,int high){
+        if(low&lt;high){
+            int mid = (low+high)/2;
+            findPeak(arr,low,mid);
+            findPeak(arr,mid+1,high);
+            merge(arr,low,high);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        if(n==1){
+            System.out.println(&quot;[&quot;+arr[0]+&quot;]&quot;);
+            return;
+        }
+        findPeak(arr, 0, n - 1);
+        int len = ans.size()-1;
+        System.out.println(ans.get(len));
+    }
+}
+</code></pre><h1 id="1121ff79-b8cd-8063-89ac-e0602966ad62" class=""><strong>Max Sub Array</strong></h1><p id="1121ff79-b8cd-8034-ac3c-fc8655067aa0" class="">You are playing a game. There are N boxes placed in a row (0-indexed),</p><p id="1121ff79-b8cd-8008-abb7-d565ed55e47d" class="">every box has some points. You need to play the game with the following rules:</p><ul id="1121ff79-b8cd-801b-9a20-e2726ee50b7c" class="bulleted-list"><li style="list-style-type:disc">Initially your score is &#x27;0&#x27; points.</li></ul><ul id="1121ff79-b8cd-80cf-bb69-d05187bc306e" class="bulleted-list"><li style="list-style-type:disc">Suppose the box has P points in it.</li></ul><p id="1121ff79-b8cd-8060-bb80-ca615931389d" class="">if p&gt;0 you will gain P points, if p&lt;0 you will loose P points.</p><ul id="1121ff79-b8cd-805e-b6b0-e76a55646e19" class="bulleted-list"><li style="list-style-type:disc">You are allowed to choose any number of consecutive boxes, atleast 1 box.</li></ul><p id="1121ff79-b8cd-805d-905c-fde07039e65b" class="">You are given the points in the N boxes as points[].</p><p id="1121ff79-b8cd-8002-bd02-d9153b5d48d0" class="">Your target is to maximize your score, and return the highest score possible.</p><h2 id="1121ff79-b8cd-8033-964c-e9ea9f6e4d65" class=""><strong>Input Format:</strong></h2><p id="1121ff79-b8cd-806b-96db-c22b399af658" class="">Line-1: An integer N.</p><p id="1121ff79-b8cd-8089-a001-f1fc2a8bd10a" class="">Line-2: N space separated integers, points[].</p><h2 id="1121ff79-b8cd-8037-9a4a-c9d457968d5f" class=""><strong>Output Format:</strong></h2><p id="1121ff79-b8cd-806c-9b5a-c364a9fd2eed" class="">An integer, print the highest score.</p><h2 id="1121ff79-b8cd-8015-a98d-ee4aef28c76b" class=""><strong>Sample Input-1:</strong></h2><p id="1121ff79-b8cd-807b-b4b3-f225c4c53644" class="">9</p><ul id="1121ff79-b8cd-80e2-81b0-e0a47a64ebe3" class="bulleted-list"><li style="list-style-type:disc">3 1 -2 4 -2 2 3 -5 4</li></ul><h2 id="1121ff79-b8cd-80c8-8d7c-dd3a4e8f82aa" class=""><strong>Sample Output-1:</strong></h2><p id="1121ff79-b8cd-80d1-9b96-c48e451b9006" class="">7</p><h2 id="1121ff79-b8cd-80ab-9bfd-efb8b2ae3cdf" class=""><strong>Explanation:</strong></h2><p id="1121ff79-b8cd-8060-a671-ebd5aae66c7b" class="">By selecting consecutive boxes are [4,-2,2,3] has the highest score is 7</p><h2 id="1121ff79-b8cd-80a9-b601-f31799beb26f" class=""><strong>Sample Input-2:</strong></h2><p id="1121ff79-b8cd-80f2-b4df-e158846169ff" class="">2</p><p id="1121ff79-b8cd-805e-a110-fe3240b81cc9" class="">1 -2</p><h2 id="1121ff79-b8cd-807d-87f8-c19b3b56fd77" class=""><strong>Sample Output-2:</strong></h2><p id="1121ff79-b8cd-807c-83af-f2e9505d0591" class="">1</p><h2 id="1121ff79-b8cd-8002-a502-e390ec02bec5" class=""><strong>Explanation:</strong></h2><p id="1121ff79-b8cd-8015-9d3e-f8177c124895" class="">By picking the box is [1] has the highest score is 7</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1121ff79-b8cd-8001-9047-c599becb602f" class="code"><code class="language-Bash">import java.util.*;
+
+class Solution{
+    
+    static int maxScore(int[] arr, int low, int high) {
+        if (low == high) return arr[low];
+        
+        int mid = (low + high) / 2;
+        int lfsc = maxScore(arr, low, mid);
+        int rfsc = maxScore(arr, mid + 1, high);
+        int score = getScore(arr, low, mid, high);
+        
+        return Math.max(lfsc, Math.max(rfsc, score));
+    }
+    static int getScore(int arr[], int low, int mid, int high) {
+        int leftSum = Integer.MIN_VALUE;
+        int rightSum = Integer.MIN_VALUE;
+
+        int sum = 0;
+
+        for (int i = mid; i &gt;= low; i--) {
+            sum += arr[i];
+            leftSum = Math.max(leftSum, sum);
+        }
+
+        sum = 0;
+
+        for (int i = mid + 1; i &lt;= high; i++) {
+            sum += arr[i];
+            rightSum = Math.max(rightSum, sum);
+        }
+
+        return leftSum + rightSum;
+    }
+    
+    public static int maxSubarray(int[] arr) {
+        int currentMax = arr[0];  
+        int max = arr[0]; 
+    
+        for (int i = 1; i &lt; arr.length; i++) {
+            currentMax = Math.max(arr[i], currentMax + arr[i]);
+            max = Math.max(max, currentMax);
+        }
+        
+        return max;
+    }
+     
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i&lt;n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        // System.out.println(maxSubarray(arr));//sliding window
+        System.out.println(maxScore(arr,0,n-1));// Divide and conquer
+    }
+}
+</code></pre><p id="1121ff79-b8cd-8094-899e-eac359f9363a" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
