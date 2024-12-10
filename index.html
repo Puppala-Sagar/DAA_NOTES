@@ -2678,12 +2678,336 @@ class Maze {
         solve(grid, n);
     }
 }
-</code></pre><h2 id="15758fd8-d211-8002-91fd-faec11729568" class=""><strong>MinCost_Climbing_Stairs</strong></h2><p id="15758fd8-d211-804c-bbeb-f694cb680fd6" class="">
-</p><h2 id="15758fd8-d211-80fc-9a04-d482356b9137" class=""><strong>0/1_Knapsack</strong></h2><p id="15758fd8-d211-80e2-ad36-ef9d86265147" class="">
-</p><h2 id="15758fd8-d211-8055-90f6-d51c4efeecf6" class=""><strong>Maximum_Sub_Array</strong></h2><p id="15758fd8-d211-801e-94cf-ec6378da980a" class="">
-</p><h2 id="15758fd8-d211-808c-b5f6-fd8f5afc8297" class=""><strong>MatrixMultiplication_Memoized</strong>Started<br/><br/></h2><p id="15758fd8-d211-8053-af18-f506d6415ae0" class="">Your are given the sizes of N-1 matrices as a list[] of size N,<br/>where the matrix are numbered from 0 to N-2<br/>and the matrix size is defined as matrix-i size is list[i]*list[i+1].<br/></p><p id="15758fd8-d211-80cb-b761-e8f71a2a979d" class="">Matrix multiplication follows associative rule. If you want to multiply 4 matrices, A,B,C and D.<br/>You can perform multiplication in the following ways, ABCD, AB(CD), A(BC)D, ((AB)C)D, (AB)(CD)..etc.<br/>To multiply two matrices of size m<br/><em>n, n</em>p, you require m<em>n</em>p number of multiplications.</p><p id="15758fd8-d211-8014-8c05-f66a6e6769d2" class="">Your task is to return the minimum number of multiplications needed to multiply the N-1 matrices.</p><h2 id="15758fd8-d211-805a-a4df-dd829d07c41f" class="">Input Format:</h2><p id="15758fd8-d211-80a5-9259-e13d8996b83f" class="">Line-1: An integer N<br/>Line-2: N space separated integers, the list[]<br/></p><h2 id="15758fd8-d211-806a-9eb2-f73979238bc4" class="">Output Format:</h2><p id="15758fd8-d211-8015-b0ec-e1d6bb22443a" class="">Print an integer, minimum multiplications needed.</p><h2 id="15758fd8-d211-80c6-ba27-f958b815cda5" class="">Sample Input-1:</h2><p id="15758fd8-d211-8049-9243-f8ae7adcc986" class="">4<br/>10 30 5 60<br/></p><h2 id="15758fd8-d211-801b-b463-c0a7f0e3d3b0" class="">Sample Output-1:</h2><p id="15758fd8-d211-800d-9f16-e7b67ef01216" class="">4500</p><h2 id="15758fd8-d211-8033-9ac1-d616ad908fa8" class="">Explanation:</h2><p id="15758fd8-d211-8091-ba14-c338a73c4ecd" class="">posibilities are:<br/>(AB)C =&gt; (10×30×5) + (10×5×60) =&gt; 1500 + 3000 = 4500 multiplications<br/>A(BC) =&gt; (30×5×60) + (10×30×60) =&gt; 9000 + 18000 = 27000 multiplications<br/></p><h2 id="15758fd8-d211-80eb-ab80-eb91ec4ceb0f" class="">Sample Input-2:</h2><p id="15758fd8-d211-8078-808a-e20c882c772c" class="">5<br/>12 5 18 7 19<br/></p><h2 id="15758fd8-d211-8077-8fae-f22c4cca6b9c" class="">Sample Output-2:</h2><p id="15758fd8-d211-8091-a9dc-ea53e26897e1" class="">2435</p><h2 id="15758fd8-d211-800c-bb22-e2ad470a6e62" class="">Explanation:</h2><p id="15758fd8-d211-8015-894e-deca4c32abf4" class="">The best way is: A((BC)D) =&gt; (12<em>5</em>19) + (5<em>18</em>7) + (5<em>7</em>19)<br/>=&gt; 1140 + 630 + 665 = 2435 multiplications<br/></p><p id="15758fd8-d211-8006-9ac4-c85f14b69a92" class="">
-</p><h2 id="15758fd8-d211-8055-bd85-d3267ac169e6" class=""><strong>MatrixMultiplication_DP</strong></h2><p id="15758fd8-d211-804a-a3c1-c14d103b71ad" class="">
-</p><h2 id="15758fd8-d211-80e6-8b4b-e28e36103033" class=""><strong>Count_Corner_Rectangles</strong></h2><p id="15758fd8-d211-80e3-8bb4-dd653b921d7f" class="">
-</p><h2 id="15758fd8-d211-8091-969a-f938f29ad233" class=""><strong>All_Pairs_Shortest_Path</strong></h2><p id="15758fd8-d211-8003-a400-eae93f0e0388" class="">
-</p><p id="15758fd8-d211-80c6-8776-caec6b10d0e2" class="">
+</code></pre><h1 id="15858fd8-d211-8003-8c43-eab4e0e92259" class="">DYNAMIC PROGRAMMING</h1><h2 id="15858fd8-d211-80b7-9f64-c0846d8ca5d8" class="">Climbing Stairs</h2><p id="15858fd8-d211-80e3-af3a-cfe0b6cefb4e" class="">// Sharath is playing a game where he has to cross N levels to win.</p><p id="15858fd8-d211-8041-9d88-f56bdfded945" class="">// The rules of the game allow Sharath to take one of the following steps:<br/>//     -Jump 1 level in one step.<br/>//     -Jump 2 levels in one step.<br/></p><p id="15858fd8-d211-807a-a111-d6392478ab46" class="">// Your task is to determine the number of distinct ways Sharath can reach the Nth level.</p><p id="15858fd8-d211-80eb-9e5c-daa5accd1be2" class="">// Constraints:</p><p id="15858fd8-d211-8008-8c0f-fd6668a0e4c3" class="">//     1 &lt;= N &lt;= 45</p><p id="15858fd8-d211-80cc-83c3-de3262896c25" class="">// Input Format:<br/>// -------------<br/>// Line-1: An Integer N represents number of levels.<br/></p><p id="15858fd8-d211-8080-86e5-dc78d089774c" class="">// Output Format:<br/>// --------------<br/>// Print an integer.<br/></p><p id="15858fd8-d211-8032-aafe-cc35648d185f" class="">// Sample Input-1:<br/>// ---------------<br/>// 2<br/></p><p id="15858fd8-d211-80bb-9dc0-fb489bfa0be8" class="">// Sample Output-1:<br/>// ----------------<br/>// 2<br/></p><p id="15858fd8-d211-8096-917b-e8d4622a0ab6" class="">// Explanation:<br/>// ------------<br/>// 1. 1-level+ 1-level =2<br/>// 2. 2 levels in one step.<br/></p><p id="15858fd8-d211-805c-ac45-e9a9e617b9db" class="">// Sample Input-2:<br/>// ---------------<br/>// 4<br/></p><p id="15858fd8-d211-80c8-9e22-cbdac0e7bb44" class="">// Sample Output-2:<br/>// ----------------<br/>// 5<br/></p><p id="15858fd8-d211-8043-89ad-c7610d8344f5" class="">// Explanation:<br/>// ------------<br/>// 1. 1-level + 1-level + 1-level + 1-level = 4<br/>// 2. 1-level + 1-level + 2-levels = 4<br/>// 3. 1-level + 2-levels + 1-level = 4<br/>// 4. 2-levels + 1-level + 1-level = 4<br/>// 5. 2-levels + 2-levels  = 4<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-8064-80a1-eab8731dcabd" class="code"><code class="language-Java">import java.util.*;
+
+// Memoization
+
+public class climbingStairs{
+    public static int fibonacci(int n, HashMap&lt;Integer,Integer&gt; map){
+        if(n==1){
+            return n;
+        }
+        if(map.containsKey(n)){
+            return map.get(n);
+        }
+        Integer fiboN = fibonacci(n-1,map) + fibonacci(n-2,map);
+        map.put(n,fiboN);
+        return fiboN;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n==0){
+            System.out.println(0);
+            sc.close();
+            return;
+        }
+        HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();
+        map.put(0,0);
+        map.put(1,1);
+        System.out.println(fibonacci(n+1,map));
+        sc.close();
+    }</code></pre><p id="15858fd8-d211-80ab-abdd-f626eb74c16d" class="">
+</p><h2 id="15758fd8-d211-8002-91fd-faec11729568" class=""><strong>MinCost_Climbing_Stairs</strong></h2><p id="15858fd8-d211-8041-a5ae-f01be75d4353" class="">// Pavan is playing a game where there are N levels and each level has some points in it.<br/>// level[i] is the points to spend on ith level(0-indexed) to move forward.<br/>// Inorder to win the game he has to reach the top level.<br/></p><p id="15858fd8-d211-8010-8bbb-ddbfa6f43d16" class="">// The rule book explains &quot;In one step you have to spend the points given on the<br/>// present level and you can either cross one level or two levels forward&quot;.<br/></p><p id="15858fd8-d211-8030-ac00-ca7595349942" class="">// Return the minimum number of points to spend to win the game.</p><p id="15858fd8-d211-80bf-9a1b-dd47cb8f1137" class="">// Note:You are allowed to start at either level-0 or level-1.</p><p id="15858fd8-d211-8070-a2b8-d2006031e6c7" class="">// Constraints:<br/>// -------------<br/>//     2 &lt;= N &lt;=1000<br/>//     0 &lt;= level[i] &lt;= 999<br/></p><p id="15858fd8-d211-80c5-b083-fde3f5d1ac1e" class="">// Input Format:<br/>// -------------<br/>// Line-1: An integer N, representing the number of levels.<br/>// Line-2: N space-separated integers, representing the points required for each level.<br/></p><p id="15858fd8-d211-8096-96ae-f7900db5a0f4" class="">// Output Format:<br/>// --------------<br/>// Line-1: Print an integer, representing the minimum number of points needed to win the game.<br/></p><p id="15858fd8-d211-8095-a5fa-e4f5bd550f50" class="">// Sample Input-1:<br/>// ---------------<br/>// 3<br/>// 20 30 40<br/></p><p id="15858fd8-d211-80f8-bfed-d6a786d0db17" class="">// Sample Output-1:<br/>// ----------------<br/>// 30<br/></p><p id="15858fd8-d211-80b3-ac3e-c8803f6a6a30" class="">// Explanation:<br/>// ------------<br/>// Pavan can start at index-1 by spending points 30 and he can win.<br/></p><p id="15858fd8-d211-80f5-a629-ea62f0981553" class="">// Sample Input-2:<br/>// ---------------<br/>// 7<br/>// 2 3 50 2 2 50 2<br/></p><p id="15858fd8-d211-807b-bc3a-ea63730628e3" class="">// Sample Output-2:<br/>// ----------------<br/>// 9<br/></p><p id="15858fd8-d211-801b-9564-f12161f2caed" class="">// Explanation:<br/>// ------------<br/>// Start at index-1:<br/>//   -Spend 3 points and reach to index-3<br/>//   -Spend 2 points and reach to index-4<br/>//   -Spend 2 points and reach to index-6<br/>//   -Spend 2 points and he wins.<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-805c-b0e5-e59a94d4f6b6" class="code"><code class="language-Java">import java.util.*;
+
+public class minCostClimbingStairs{
+    public static int getMinCost(int[] arr, int n){
+        int[] dp = new int[n];
+        dp[0] = arr[0];
+        dp[1] = arr[1];
+        for(int i = 2;i&lt;n;i++){
+            dp[i] = arr[i] + Math.min(dp[i-1],dp[i-2]);
+        }
+        return Math.min(dp[n-1],dp[n-2]);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(getMinCost(arr,n));
+        sc.close();
+    }
+}</code></pre><p id="15858fd8-d211-80fd-bdef-f677068c9c80" class="">
+</p><p id="15858fd8-d211-80b7-a304-c146e304f954" class="">
+</p><p id="15758fd8-d211-804c-bbeb-f694cb680fd6" class="">
+</p><h2 id="15758fd8-d211-80fc-9a04-d482356b9137" class=""><strong>0/1_Knapsack</strong></h2><p id="15858fd8-d211-803d-8292-d13f43487ef1" class="">// Mr. Dharma is shopping at D-Mart with a basket that has a capacity C.<br/>// He has a wishlist of N products, where each product has a cost and a quantity.<br/></p><p id="15858fd8-d211-805d-8cc9-f220ca3fdccb" class="">// His goal is to purchase products in such a way that:<br/>// 	-The total quantity of the selected products does not exceed the basket capacity C.<br/>// 	-The total cost of the selected products is maximized among all possible combinations.<br/></p><p id="15858fd8-d211-80c5-884e-ddf0a8ab18bd" class="">// Your task is to help Mr. Dharma determine the maximum cost he can achieve under the given constraints.</p><p id="15858fd8-d211-8011-9bfa-c9cdf94a416e" class="">// Input Format:<br/>// --------------<br/>// Line-1: Two space-separated integers N and C, representing the number of products and the basket capacity, respectively.<br/>// Next N lines: Two space-separated integers Ci and Qi, representing the cost and quantity of the ith product.<br/></p><p id="15858fd8-d211-802a-9048-d37c55fe7aac" class="">// Output Format:<br/>// --------------<br/>// Line-1: Print an integer, the maximum cost Mr. Dharma can achieve.<br/></p><p id="15858fd8-d211-8086-a555-f458cf399983" class="">// Constraints:<br/>// ------------<br/>// *1≤N≤100 (Number of products)<br/>// *1≤C≤1000 (Basket capacity)<br/>// *1≤Ci,Qi≤100 (Cost and quantity of each product)<br/></p><p id="15858fd8-d211-808b-861f-e5e83edd3522" class="">// Sample Input-1:<br/>// ---------------<br/>// 4 15<br/>// 10 2<br/>// 10 4<br/>// 12 6<br/>// 18 9<br/></p><p id="15858fd8-d211-80ce-ad2d-d1ca28b5b84a" class="">// Sample Output-1:<br/>// ----------------<br/>// 38<br/></p><p id="15858fd8-d211-8068-a7fd-d2e0b427d113" class="">// Explanation:<br/>// ------------<br/>// The selected products are:<br/>// 	Product 1 (Cost = 10, Quantity = 2)<br/>// 	Product 2 (Cost = 10, Quantity = 4)<br/>// 	Product 4 (Cost = 18, Quantity = 9)<br/></p><p id="15858fd8-d211-80f9-9b16-d6753c85da0c" class="">// Total cost = 10 + 10 + 18 = 38<br/>// Total quantity = 2 + 4 + 9 = 15<br/></p><p id="15858fd8-d211-8025-b260-e485ef22b4ca" class="">// Sample Input-2:<br/>// ---------------<br/>// 4 21<br/>// 18 6<br/>// 20 3<br/>// 14 5<br/>// 18 9<br/></p><p id="15858fd8-d211-8030-bdf9-f3059c76d2ad" class="">// Sample Output-2:<br/>// ----------------<br/>// 56<br/></p><p id="15858fd8-d211-80fe-a7c8-dd805d632086" class="">// Explanation:<br/>// ------------<br/>// The selected products are:<br/>// 	Product 1 (Cost = 18, Quantity = 6)<br/>// 	Product 2 (Cost = 20, Quantity = 3)<br/>// 	Product 4 (Cost = 18, Quantity = 9)<br/></p><p id="15858fd8-d211-8015-8d56-cde7bd8bff8d" class="">// Total cost = 18 + 20 + 18 = 56<br/>// Total quantity = 6 + 3 + 9 = 18<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-80bb-b58e-fa02cb04b7bb" class="code"><code class="language-Java">import java.util.*;
+
+public class ZeroOneKnapsack{
+    public static int maxCost(int[] weight, int[] value, int n, int wt){
+        int[][] dp = new int[n+1][wt+1];
+        for(int i = 1;i&lt;=n;i++){
+            for(int w = 1;w&lt;=wt;w++){
+                if(w&gt;=weight[i-1]){
+                    dp[i][w] = Math.max(dp[i-1][w],dp[i-1][w-weight[i-1]]+value[i-1]);
+                }
+                else{
+                    dp[i][w] = dp[i-1][w];
+                }
+            }
+        }
+        return dp[n][wt];
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int wt = sc.nextInt();
+        int[] weight = new int[n];
+        int[] value = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            value[i] = sc.nextInt();
+            weight[i] = sc.nextInt();
+        }
+        System.out.println(maxCost(weight,value,n,wt));
+        sc.close();
+    }
+}</code></pre><h2 id="15858fd8-d211-805c-947f-dc14cebc2607" class="">HOUSE ROBBER</h2><p id="15858fd8-d211-8058-b0bd-e8e6c68666a7" class="">// A group of houses is arranged in a street, and each house has a certain amount of money stashed inside.<br/>// A robber wants to steal the maximum amount of money possible.<br/>// However, there is a catch:<br/>// &quot;the robber cannot rob two adjacent houses as it will alert the police.&quot;<br/></p><p id="15858fd8-d211-805f-9ba0-df4e984b29fc" class="">// You are tasked to calculate the maximum amount of money the robber can steal without alerting the police.</p><p id="15858fd8-d211-801a-bb9b-d8baf7dc7fae" class="">// Input Format:<br/>// -------------<br/>// Line-1: An integer n, representing the number of houses in the street.<br/>// Line-2: n space-separated integers, representing the money stashed in each house.<br/></p><p id="15858fd8-d211-8087-8112-de80df4e2df0" class="">// Output Format:<br/>// --------------<br/>// Line-1: An integer, Print the maximum amount of money the robber can steal without alerting the police.<br/></p><p id="15858fd8-d211-8065-991e-def67d311b9b" class="">// Sample Input-1:<br/>// ---------------<br/>// 5<br/>// 100 50 400 200 100<br/></p><p id="15858fd8-d211-80e0-9a8a-e8693972ce34" class="">// Sample Output-1:<br/>// ----------------<br/>// 600<br/></p><p id="15858fd8-d211-8021-94ae-d2f758e80e32" class="">// Explanation:<br/>// ------------<br/>// The robber will steal 100, 400 and 100 from the houses.<br/>// Refer Hint for more.<br/></p><p id="15858fd8-d211-80c9-95f1-f5a98efd5453" class="">// Sample Input-2:<br/>// ---------------<br/>// 5<br/>// 5 3 4 11 2<br/></p><p id="15858fd8-d211-8052-8429-d1a2b34108ee" class="">// Sample Output-2:<br/>// ----------------<br/>// 16<br/></p><p id="15858fd8-d211-8036-98c2-c0c11e66c43c" class="">// Explanation:<br/>// ------------<br/>// Thief will steal 5 and 11 from the houses.<br/></p><p id="15858fd8-d211-80aa-83cf-dad8ec1a9d21" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-800a-aab7-cf1c98751d96" class="code"><code class="language-Java">import java.util.*;
+
+public class houseRobber{
+    public static int maxMoney(int[] houses, int n){
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return houses[0];
+        }
+        if(n==2){
+            return Math.max(houses[0],houses[1]);
+        }
+        int[] dp = new int[n];
+        dp[0] = houses[0];
+        dp[1] = Math.max(houses[0],houses[1]);
+        for(int i=2;i&lt;n;i++){
+            dp[i] = Math.max(dp[i-1],dp[i-2]+houses[i]);
+        }
+        return dp[n-1];
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] houses = new int[n];
+        for(int i=0;i&lt;n;i++){
+            houses[i] = sc.nextInt();
+        }
+        System.out.println(maxMoney(houses,n));
+        sc.close();
+    }
+}</code></pre><h2 id="15758fd8-d211-8055-90f6-d51c4efeecf6" class=""><strong>Maximum_Sub_Array</strong></h2><p id="15858fd8-d211-8028-9c81-e90c5fa22196" class="">// You are playing a game. There are N boxes placed in a row (0-indexed),<br/>// every box has some points.<br/></p><p id="15858fd8-d211-809e-9998-f62bd7f19953" class="">// You need to play the game with the following rules:<br/>//     - Initially your score is  &#x27;0&#x27; points.<br/>// 	- Suppose the box has P points in it.<br/>// 	  if p&gt;0 you will gain P points, if p&lt;0 you will loose P points.<br/>// 	- You are allowed to choose any number of consecutive boxes, atleast 1 box.<br/></p><p id="15858fd8-d211-8073-b361-ef5f6ff13045" class="">// You are given the points in the N boxes as points[].<br/>// Your target is to maximize your score, and return the highest score possible.<br/></p><p id="15858fd8-d211-80b4-8fd0-d2cbc7abdcc6" class="">// Input Format:<br/>// -------------<br/>// Line-1: An integer N.<br/>// Line-2: N space separated integers, points[].<br/></p><p id="15858fd8-d211-80aa-badc-f271f9d40a40" class="">// Output Format:<br/>// --------------<br/>// An integer, print the highest score.<br/></p><p id="15858fd8-d211-80df-89be-e240559125a0" class="">// Sample Input-1:<br/>// ---------------<br/>// 9<br/>// -3 1 -2 4 -2 2 3 -5 4<br/></p><p id="15858fd8-d211-8002-9e08-d5dbf56b867c" class="">// Sample Output-1:<br/>// ----------------<br/>// 7<br/></p><p id="15858fd8-d211-8081-a957-f4fd9f38c14d" class="">// Explanation:<br/>// ------------<br/>// By selecting consecutive boxes are [4,-2,2,3] has the highest score is 7<br/></p><p id="15858fd8-d211-80a3-937d-f4c9a5172701" class="">// Sample Input-2:<br/>// ---------------<br/>// 2<br/>// 1 -2<br/></p><p id="15858fd8-d211-80fa-8ad2-f4b2a2be92bc" class="">// Sample Output-2:<br/>// ----------------<br/>// 1<br/></p><p id="15858fd8-d211-80bf-8112-e2931051be00" class="">// Explanation:<br/>// ------------<br/>// By picking the box is [1] has the highest score is 1.<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15758fd8-d211-801e-94cf-ec6378da980a" class="code"><code class="language-Java">import java.util.*;
+
+public class MaxSubArray_Non_Memoization{
+    public static int maxSubArray(int[] arr, int n){
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i = 0;i&lt;n;i++){
+            sum += arr[i];
+            max = Math.max(max,sum);
+            if(sum&lt;0){
+                sum = 0;
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(maxSubArray(arr,n));
+        sc.close();
+    }
+}</code></pre><p id="15858fd8-d211-8095-be65-d51f9d3df409" class="">TABULATION</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-80d6-b2b4-ea14264a31ab" class="code"><code class="language-Java">import java.util.*;
+
+public class MaxSubArray_Tabulation{
+    public static int maxSubArray(int[] arr, int n){
+        int[] dp = new int[n];
+        dp[0] = arr[0];
+        int max = dp[0];
+        for(int i = 1;i&lt;n;i++){
+            dp[i] = arr[i] + (dp[i-1]&gt;0?dp[i-1]:0);
+            max = Math.max(max,dp[i]);
+        }
+        return max;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(maxSubArray(arr,n));
+        sc.close();
+    }
+}</code></pre><h2 id="15758fd8-d211-808c-b5f6-fd8f5afc8297" class=""><strong>MatrixMultiplication_Memoized</strong><br/><br/></h2><p id="15758fd8-d211-8053-af18-f506d6415ae0" class="">Your are given the sizes of N-1 matrices as a list[] of size N,<br/>where the matrix are numbered from 0 to N-2<br/>and the matrix size is defined as matrix-i size is list[i]*list[i+1].<br/></p><p id="15758fd8-d211-80cb-b761-e8f71a2a979d" class="">Matrix multiplication follows associative rule. If you want to multiply 4 matrices, A,B,C and D.<br/>You can perform multiplication in the following ways, ABCD, AB(CD), A(BC)D, ((AB)C)D, (AB)(CD)..etc.<br/>To multiply two matrices of size m<br/><em>n, n</em>p, you require m<em>n</em>p number of multiplications.</p><p id="15758fd8-d211-8014-8c05-f66a6e6769d2" class="">Your task is to return the minimum number of multiplications needed to multiply the N-1 matrices.</p><h2 id="15758fd8-d211-805a-a4df-dd829d07c41f" class="">Input Format:</h2><p id="15758fd8-d211-80a5-9259-e13d8996b83f" class="">Line-1: An integer N<br/>Line-2: N space separated integers, the list[]<br/></p><h2 id="15758fd8-d211-806a-9eb2-f73979238bc4" class="">Output Format:</h2><p id="15758fd8-d211-8015-b0ec-e1d6bb22443a" class="">Print an integer, minimum multiplications needed.</p><h2 id="15758fd8-d211-80c6-ba27-f958b815cda5" class="">Sample Input-1:</h2><p id="15758fd8-d211-8049-9243-f8ae7adcc986" class="">4<br/>10 30 5 60<br/></p><h2 id="15758fd8-d211-801b-b463-c0a7f0e3d3b0" class="">Sample Output-1:</h2><p id="15758fd8-d211-800d-9f16-e7b67ef01216" class="">4500</p><h2 id="15758fd8-d211-8033-9ac1-d616ad908fa8" class="">Explanation:</h2><p id="15758fd8-d211-8091-ba14-c338a73c4ecd" class="">posibilities are:<br/>(AB)C =&gt; (10×30×5) + (10×5×60) =&gt; 1500 + 3000 = 4500 multiplications<br/>A(BC) =&gt; (30×5×60) + (10×30×60) =&gt; 9000 + 18000 = 27000 multiplications<br/></p><h2 id="15758fd8-d211-80eb-ab80-eb91ec4ceb0f" class="">Sample Input-2:</h2><p id="15758fd8-d211-8078-808a-e20c882c772c" class="">5<br/>12 5 18 7 19<br/></p><h2 id="15758fd8-d211-8077-8fae-f22c4cca6b9c" class="">Sample Output-2:</h2><p id="15758fd8-d211-8091-a9dc-ea53e26897e1" class="">2435</p><h2 id="15758fd8-d211-800c-bb22-e2ad470a6e62" class="">Explanation:</h2><p id="15758fd8-d211-8015-894e-deca4c32abf4" class="">The best way is: A((BC)D) =&gt; (12<em>5</em>19) + (5<em>18</em>7) + (5<em>7</em>19)<br/>=&gt; 1140 + 630 + 665 = 2435 multiplications<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15758fd8-d211-8006-9ac4-c85f14b69a92" class="code"><code class="language-Java">import java.util.*;
+
+public class MatrixChainMultiplication{
+    public static int matrixChainOrder(int[] arr, int i, int j){
+        if(i==j){
+            return 0;
+        }
+        int res = Integer.MAX_VALUE;
+        for(int k=i;k&lt;j;k++){
+            int count = matrixChainOrder(arr,i,k);
+            count += matrixChainOrder(arr,k+1,j);
+            count += arr[i-1]*arr[k]*arr[j];
+            res = Math.min(res,count);
+        }
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(matrixChainOrder(arr,1,n-1));
+        sc.close();
+    }
+}</code></pre><p id="15758fd8-d211-8055-bd85-d3267ac169e6" class="">TABULATION</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-8067-a492-d97bd24ba218" class="code"><code class="language-Java">import java.util.*;
+public class MatrixChainMultiplication_DP_Tabulation {
+    public static int matrixChainMultiplication(int[] arr,int n, int[][] dp){
+        for(int len = 1; len&lt;n-1;len++){
+            for(int i = 1; i&lt;n-len;i++){
+                int j = i+len;
+                dp[i][j] = Integer.MAX_VALUE;
+                for(int k = i;k&lt;j;k++){
+                    int cost = dp[i][k] + dp[k+1][j] + arr[i-1]*arr[k]*arr[j];
+                    dp[i][j] = Math.min(dp[i][j],cost);
+                }
+            }
+        }
+        return dp[1][n-1];
+    }
+    public static int matrixChainOrder(int[] arr, int n){
+        int[][] dp = new int[n][n];
+        return matrixChainMultiplication(arr,n,dp);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(matrixChainOrder(arr,n));
+        sc.close();
+
+    }
+}</code></pre><p id="15858fd8-d211-80a9-817f-c14b5478eb5a" class="">MEMOIZATION</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-8037-8607-db332f29fd4e" class="code"><code class="language-Java">import java.util.*;
+public class MatrixChainMultiplication_Memoization {
+    public static int matrixChainMultiplication(int[] arr, int i, int j, int[][] dp){
+        if(i==j){
+            return 0;
+        }
+        if(dp[i][j] != 0){
+            return dp[i][j];
+        }
+        dp[i][j] = Integer.MAX_VALUE;
+        for(int k = i;k&lt;j;k++){
+            dp[i][j] = Math.min(dp[i][j],matrixChainMultiplication(arr, i, k, dp)+matrixChainMultiplication(arr, k+1, j, dp) + arr[i-1]*arr[k]*arr[j]);
+        }
+        return dp[i][j];
+    }
+    public static int matrixChainOrder(int[] arr, int i, int n){
+        int[][] dp = new int[n][n];
+        return matrixChainMultiplication(arr,i,n-1,dp);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(matrixChainOrder(arr,1,n));
+        sc.close();
+
+    }
+}</code></pre><p id="15858fd8-d211-8023-823a-c2bd27442990" class="">
+</p><p id="15858fd8-d211-801e-8d1c-e44a31a8ad3e" class="">
+</p><p id="15758fd8-d211-804a-a3c1-c14d103b71ad" class="">
+</p><h2 id="15758fd8-d211-80e6-8b4b-e28e36103033" class=""><strong>Count_Corner_Rectangles</strong></h2><p id="15858fd8-d211-80df-9079-c9b8c1c3cf1b" class="">// JVS Infra Pvt Ltd purchased a flatland of size M<em>N, and it is divided<br/>// into 1<br/></em>1 cells. They mave marked some cells with red colors indicated<br/>// with 1 and other cells with blue color indicated with 0.<br/></p><p id="15858fd8-d211-808a-8f17-dadbd190ba59" class="">// They want to build the walls in the form of rectangles by connecting four distinct<br/>// red colored cells on the flatland that forms an axis-aligned rectangle.<br/>// And only the corners of the walls need to be red colored.<br/></p><p id="15858fd8-d211-80c8-95bd-e6d16d2c9690" class="">// Your task is to help, JVS Infra to count the number of rectangular walls<br/>// can be built by connecting the red colored cells on the flatland.<br/></p><p id="15858fd8-d211-8074-abd2-d8683234a148" class="">// Input Format:<br/>// -------------<br/>// Line-1: Two space separated integers, M and N<br/>// Next M lines: N space separated integers, either 0 or 1 only.<br/></p><p id="15858fd8-d211-809d-9b3d-d53c707446b9" class="">// Output Format:<br/>// --------------<br/>// Print an integer result.<br/></p><p id="15858fd8-d211-80b0-b2cb-cf1d8cc52dc5" class="">// Sample Input-1:<br/>// ---------------<br/>// 3 4<br/>// 1 0 1 0<br/>// 1 1 1 1<br/>// 0 1 1 1<br/></p><p id="15858fd8-d211-80b1-badb-e965e5376371" class="">// Sample Output-1:<br/>// ----------------<br/>// 4<br/></p><p id="15858fd8-d211-8042-a103-ed339d2676ac" class="">// Explanation:<br/>// -----------<br/>// Given flatland is:<br/>// 1 0 1 0<br/>// 1 1 1 1<br/>// 0 1 1 1<br/>// Number of rectangular walls are: 4<br/>// rectangle-1: by connecting 1&#x27;s at (0, 0), (1, 0), (0, 2), (1, 2)<br/>// rectangle-2: by connecting 1&#x27;s at (1, 1), (1, 2), (2, 1), (2, 2)<br/>// rectangle-3: by connecting 1&#x27;s at (1, 1), (1, 3), (2, 1), (2, 3)<br/>// rectangle-4: by connecting 1&#x27;s at (1, 2), (2, 2), (1, 3), (2, 3)<br/></p><p id="15858fd8-d211-80c5-9aff-d6e7591c272b" class="">// Sample Input-2:<br/>// ---------------<br/>// 4 5<br/>// 1 0 1 0 1<br/>// 0 0 0 1 0<br/>// 0 1 1 0 1<br/>// 1 0 1 0 0<br/></p><p id="15858fd8-d211-80b5-8581-d7ccd5f8b347" class="">// Sample Output-2:<br/>// ----------------<br/>// 2<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15858fd8-d211-8070-9a87-f128fb0cce7c" class="code"><code class="language-Java">import java.util.*;
+
+public class CountCornerRectangles{
+    public static int countRectangles(int[][] arr, int n, int m){
+        int res = 0;
+        for(int i = 0;i&lt;n;i++){
+            for(int j = i+1;j&lt;n;j++){
+                for(int k = 0,counter=0;k&lt;m;k++){
+                    if(arr[i][k] + arr[j][k] == 2){
+                        res += counter++;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+
+        for(int i = 0;i&lt;n;i++){
+            for(int j = 0;j&lt;m;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println(countRectangles(arr, n, m));
+        sc.close();
+    }
+}</code></pre><p id="15758fd8-d211-80e3-8bb4-dd653b921d7f" class="">
+</p><h2 id="15758fd8-d211-8091-969a-f938f29ad233" class=""><strong>All_Pairs_Shortest_Path</strong></h2><p id="15858fd8-d211-807c-beca-cf189b8fd075" class="">// Mr Abdul planned to visit all the tourist paths in a city.<br/>// There are P number of tourist places connected using some routes<br/>// in a city, the routes are one-directional.<br/></p><p id="15858fd8-d211-8045-a39e-d7756a98f4a5" class="">// Your task is to help Mr Abdul, to find the shortest routes between every pair<br/>// of tourist-places in the city.<br/></p><p id="15858fd8-d211-8032-97d9-ce8206531f1a" class="">// Input Format:<br/>// ------------------<br/>// Line-1: An integer P, number of places.<br/>// Next P lines: P space separated integers, the routes[][].<br/></p><p id="15858fd8-d211-8073-a77e-df27d556506b" class="">// Value 99 represents infinity (Large value)</p><p id="15858fd8-d211-80ac-93f8-f6cc88dd6740" class="">// Output Format:<br/>// --------------------<br/>// Print the shortest distance routes[][].<br/></p><p id="15858fd8-d211-8026-a709-e2658f56027b" class="">// Sample Input-1:<br/>// --------------------<br/>// 4<br/>// 0 5 99 10<br/>// 99 0 3 99<br/>// 99 99 0 1<br/>// 99 99 99 0<br/></p><p id="15858fd8-d211-8082-ae2d-eb50d6701bb6" class="">// Sample Output-1:<br/>// ----------------------<br/>// 0 5 8 9<br/>// INF 0 3 4<br/>// INF INF 0 1<br/>// INF INF INF 0<br/></p><p id="15858fd8-d211-80b3-9d86-eaa4aedb4b94" class="">// Sample Input-2:<br/>// --------------------<br/>// 5<br/>// 0 4 5 6 99<br/>// 99 0 5 99 10<br/>// 1 99 0 3 99<br/>// 2 99 99 0 1<br/>// 1 99 99 99 0<br/></p><p id="15858fd8-d211-80d1-b1c9-c6153b19ce66" class="">// Sample Output-2:<br/>// ----------------------<br/>// 0 4 5 6 7<br/>// 6 0 5 8 9<br/>// 1 5 0 3 4<br/>// 2 6 7 0 1<br/>// 1 5 6 7 0<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15758fd8-d211-8003-a400-eae93f0e0388" class="code"><code class="language-Java">import java.util.*;
+public class allPairsShortest_Floyd {
+    public static void floydWarshall(int[][] grid, int v){
+        int[][] dist = new int[v][v];
+        for(int i = 0;i&lt;v;i++){
+            for(int j = 0;j&lt;v;j++){
+                dist[i][j] = grid[i][j];
+            }
+        }
+
+        for(int k = 0;k&lt;v;k++){
+            for(int i = 0;i&lt;v;i++){
+                for(int j = 0;j&lt;v;j++){
+                    if(dist[i][j] &gt; dist[i][k] + dist[k][j]){
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                        System.out.println(dist[i][j]);
+                    }
+                }
+            }
+        }
+        for(int i = 0;i&lt;v;i++){
+            for(int j = 0;j&lt;v;j++){
+                if(dist[i][j] == 99){
+                    System.out.print(&quot;INF&quot; + &quot; &quot;);
+                }
+                else{
+                    System.out.print(dist[i][j] + &quot; &quot;);
+                }
+            }
+            System.out.println(&quot;&quot;);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v = sc.nextInt();
+        int[][] grid = new int[v][v];
+        for(int i = 0;i&lt;v;i++){
+            for(int j = 0;j&lt;v;j++){
+                grid[i][j] = sc.nextInt();
+            }
+        }
+        floydWarshall(grid, v);
+        sc.close();
+    }
+    
+}</code></pre><p id="15758fd8-d211-80c6-8776-caec6b10d0e2" class="">
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
